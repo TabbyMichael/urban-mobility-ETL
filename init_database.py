@@ -22,13 +22,13 @@ def init_database():
         print("Failed to connect to database")
         return False
     
-    # Create tables
-    if db_manager.create_tables():
-        print("Database tables created successfully")
+    # Initialize schema
+    if db_manager.initialize_schema():
+        print("Database schema initialized successfully")
         db_manager.close()
         return True
     else:
-        print("Failed to create database tables")
+        print("Failed to initialize database schema")
         db_manager.close()
         return False
 

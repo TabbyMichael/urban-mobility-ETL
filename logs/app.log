@@ -163,3 +163,55 @@
 2025-11-06 23:00:41,386 INFO src.data.database Data loaded from database table: table3
 2025-11-06 23:10:50,095 INFO werkzeug  * Detected change in '/home/kzer00/Documents/Urban Mobility & Transportation Analytics ETL/run.py', reloading
 2025-11-06 23:10:50,290 INFO werkzeug  * Restarting with stat
+2025-11-08 13:22:32,537 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:32,675 INFO src.data.database Data saved to database table: test_table
+2025-11-08 13:22:32,696 INFO src.data.database Data loaded from database table: test_table
+2025-11-08 13:22:32,712 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:32,769 INFO src.data.database Data saved to database table: test_table
+2025-11-08 13:22:32,788 INFO src.data.database Data loaded from database table: test_table
+2025-11-08 13:22:32,805 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:32,822 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:32,839 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:32,856 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:32,874 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:32,916 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:32,933 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:32,951 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:32,969 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:32,986 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,008 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,025 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,041 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,057 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,073 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,202 INFO src.data.database Data saved to database table: trips_test
+2025-11-08 13:22:33,223 INFO src.data.database Data saved to database table: uber_travel_times_test
+2025-11-08 13:22:33,244 INFO src.data.database Data saved to database table: mta_status_test
+2025-11-08 13:22:33,260 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,280 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,297 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,314 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,337 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,362 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,378 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,397 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,415 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,433 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,456 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:33,539 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:39,304 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:39,320 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:39,337 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:39,417 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:39,434 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:39,451 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:40,069 INFO src.data.database Data saved to database table: performance_test
+2025-11-08 13:22:40,155 INFO src.data.database Data loaded from database table: performance_test
+2025-11-08 13:22:40,172 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:40,189 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:40,206 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:40,334 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:40,375 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:40,403 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:40,431 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:22:40,456 INFO src.data.database Successfully connected to PostgreSQL database

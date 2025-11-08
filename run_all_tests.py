@@ -20,7 +20,9 @@ def run_tests():
         'test_api_integration',
         'test_end_to_end',
         'test_performance',
-        'test_comprehensive_end_to_end'
+        'test_comprehensive_end_to_end',
+        'test_end_to_end_comprehensive',
+        'test_improvements'
     ]
     
     for module_name in test_modules:

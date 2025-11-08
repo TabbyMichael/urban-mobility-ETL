@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard';
 import Analytics from './components/Analytics';
 import Maps from './components/Maps';
 import Predictive from './components/Predictive';
+import RealTime from './components/RealTime';
 import './App.css';
 import './components/AppLayout.css';
 
@@ -56,6 +57,7 @@ function App() {
               <Route path="/analytics" element={<Analytics />} />
               <Route path="/maps" element={<Maps />} />
               <Route path="/predictive" element={<Predictive />} />
+              <Route path="/realtime" element={<RealTime />} />
             </Routes>
           </div>
         </div>
