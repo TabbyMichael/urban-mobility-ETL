@@ -8,3 +8,6 @@ SQLAlchemy==2.0.35
 GeoAlchemy2==0.15.2
 apache-airflow==2.10.2
 scikit-learn==1.5.2
+PyJWT==2.8.0
+bcrypt==4.1.2
+Flask-SocketIO==5.3.6

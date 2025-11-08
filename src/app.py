@@ -10,6 +10,8 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.api.routes import api_bp
 from src.config.settings import Config
 from src.config.logging import logger
+from src.auth.auth import auth_manager
+from src.streaming.streaming import streamer
 
 def create_app():
     app = Flask(__name__)
@@ -18,6 +20,9 @@ def create_app():
     # Set up logging
     if not app.debug:
         logger.info("Starting Urban Mobility Analytics API")
+    
+    # Initialize SocketIO
+    streamer.init_app(app)
     
     # Register blueprints
     app.register_blueprint(api_bp, url_prefix='/api/v1')
@@ -32,7 +37,8 @@ def create_app():
                 "authentication": "/api/v1/auth",
                 "taxi_data": "/api/v1/taxi",
                 "uber_data": "/api/v1/uber",
-                "transit_data": "/api/v1/transit"
+                "transit_data": "/api/v1/transit",
+                "realtime": "WebSocket connection at /socket.io/"
             }
         })
     
@@ -53,19 +59,45 @@ def create_app():
             logger.warning("Missing username or password in login request")
             return jsonify({"message": "Username and password are required"}), 400
         
-        # Simple authentication for demo purposes
-        if username == 'admin' and password == 'admin':
+        # Authenticate user
+        auth_result = auth_manager.authenticate_user(username, password)
+        if auth_result:
             logger.info(f"Successful login for user: {username}")
             return jsonify({
                 "message": "Login successful",
-                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIn0.5r8147"
+                "username": auth_result["username"],
+                "role": auth_result["role"],
+                "token": auth_result["token"]
             }), 200
         else:
             logger.warning(f"Failed login attempt for user: {username}")
             return jsonify({"message": "Invalid credentials"}), 401
     
+    @app.route('/api/v1/auth/register', methods=['POST'])
+    def register():
+        """User registration endpoint"""
+        logger.info("Registration endpoint accessed")
+        
+        if not request.is_json:
+            return jsonify({"message": "Content-Type must be application/json"}), 400
+        
+        data = request.get_json()
+        username = data.get('username')
+        password = data.get('password')
+        role = data.get('role', 'user')
+        
+        if not username or not password:
+            return jsonify({"message": "Username and password are required"}), 400
+        
+        # Create user
+        if auth_manager.create_user(username, password, role):
+            return jsonify({"message": "User created successfully"}), 201
+        else:
+            return jsonify({"message": "Failed to create user. Username may already exist."}), 400
+    
     return app
 
 if __name__ == '__main__':
     app = create_app()
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # Run with SocketIO
+    streamer.socketio.run(app, host='0.0.0.0', port=5000, debug=True)

@@ -3,7 +3,10 @@ import os
 import pandas as pd
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.pool import QueuePool
 import logging
+from functools import lru_cache
+from datetime import datetime, timedelta
 
 class DatabaseManager:
     def __init__(self):
@@ -20,7 +23,16 @@ class DatabaseManager:
             db_password = os.getenv('DB_PASSWORD', 'postgres')
             
             db_url = f'postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}'
-            self.engine = create_engine(db_url, echo=False)
+            # Create engine with connection pooling
+            self.engine = create_engine(
+                db_url, 
+                echo=False,
+                poolclass=QueuePool,
+                pool_size=10,
+                max_overflow=20,
+                pool_pre_ping=True,
+                pool_recycle=3600
+            )
             # Test connection
             with self.engine.connect() as conn:
                 conn.execute(text("SELECT 1"))
@@ -29,6 +41,15 @@ class DatabaseManager:
             self.logger.warning(f"Failed to connect to PostgreSQL: {e}")
             self.logger.info("Using in-memory storage as fallback")
             self.engine = None
+    
+    def connect(self):
+        """Connect to the database"""
+        return self.engine is not None
+    
+    def close(self):
+        """Close database connection"""
+        if self.engine:
+            self.engine.dispose()
     
     def store_in_memory(self, table_name, data):
         """Store data in memory when database is not available"""
@@ -84,19 +105,70 @@ class DatabaseManager:
             # Load from memory
             return self.load_from_memory(table_name)
     
-    def execute_query(self, query):
-        """Execute a SQL query"""
+    @lru_cache(maxsize=128)
+    def execute_query_cached(self, query, params=None):
+        """Execute a SQL query with caching"""
+        return self._execute_query_internal(query, params)
+    
+    def execute_query(self, query, params=None):
+        """Execute a SQL query without caching"""
+        return self._execute_query_internal(query, params)
+    
+    def _execute_query_internal(self, query, params=None):
+        """Internal method to execute a SQL query"""
         if self.engine:
             try:
                 with self.engine.connect() as conn:
-                    result = conn.execute(text(query))
-                    return pd.DataFrame(result.fetchall(), columns=result.keys())
+                    if params:
+                        result = conn.execute(text(query), **params)
+                    else:
+                        result = conn.execute(text(query))
+                    # Convert result to DataFrame using pandas built-in method
+                    df = pd.DataFrame(result.fetchall())
+                    if not df.empty:
+                        df.columns = list(result.keys())
+                    return df
             except Exception as e:
                 self.logger.error(f"Query execution error: {e}")
                 return pd.DataFrame()
         else:
             self.logger.warning("Cannot execute query: No database connection")
             return pd.DataFrame()
+    
+    def execute_script(self, script_path):
+        """Execute a SQL script file"""
+        if not self.engine:
+            self.logger.warning("Cannot execute script: No database connection")
+            return False
+            
+        try:
+            with open(script_path, 'r') as file:
+                script = file.read()
+            
+            # Split script into individual statements
+            statements = script.split(';')
+            
+            with self.engine.connect() as conn:
+                for statement in statements:
+                    statement = statement.strip()
+                    if statement:
+                        conn.execute(text(statement))
+                conn.commit()
+            
+            self.logger.info(f"Successfully executed script: {script_path}")
+            return True
+        except Exception as e:
+            self.logger.error(f"Error executing script {script_path}: {e}")
+            return False
+    
+    def initialize_schema(self):
+        """Initialize database schema"""
+        schema_path = os.path.join(os.path.dirname(__file__), 'schema.sql')
+        if os.path.exists(schema_path):
+            return self.execute_script(schema_path)
+        else:
+            self.logger.error(f"Schema file not found: {schema_path}")
+            return False
 
 # Global instance
 db_manager = DatabaseManager()
