@@ -1,0 +1,14 @@
+[build]
+builder = "dockerfile"
+
+[deploy]
+startCommand = "python run.py"
+restartPolicyType = "never"
+
+[env]
+PORT = "5000"
+DB_HOST = "${{ Postgres.host }}"
+DB_PORT = "${{ Postgres.port }}"
+DB_NAME = "${{ Postgres.database }}"
+DB_USER = "${{ Postgres.user }}"
+DB_PASSWORD = "${{ Postgres.password }}"

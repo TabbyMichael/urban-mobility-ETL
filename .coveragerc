@@ -1,0 +1,28 @@
+[run]
+source = src/
+omit = 
+    */venv/*
+    */tests/*
+    */__pycache__/*
+    */migrations/*
+    */settings/*
+    manage.py
+    */test_*
+    */conftest.py
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    raise AssertionError
+    raise NotImplementedError
+    if __name__ == .__main__.:
+    if settings.DEBUG
+    if DEBUG
+    if DEVELOPMENT
+    if TESTING
+
+ignore_errors = True
+
+[html]
+directory = htmlcov

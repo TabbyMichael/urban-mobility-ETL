@@ -1,0 +1,165 @@
+2025-11-06 21:53:42,410 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.9:5000
+2025-11-06 21:53:42,411 INFO werkzeug [33mPress CTRL+C to quit[0m
+2025-11-06 21:53:42,412 INFO werkzeug  * Restarting with stat
+2025-11-06 21:53:43,622 WARNING werkzeug  * Debugger is active!
+2025-11-06 21:53:43,625 INFO werkzeug  * Debugger PIN: 839-453-592
+2025-11-06 21:54:10,488 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 21:54:10] "POST /api/v1/auth/login HTTP/1.1" 200 -
+2025-11-06 21:55:01,816 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 21:55:01] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-06 21:55:39,302 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): data.cityofnewyork.us:443
+2025-11-06 21:56:03,659 DEBUG urllib3.connectionpool https://data.cityofnewyork.us:443 "GET /resource/t29m-gskq.json HTTP/1.1" 200 None
+2025-11-06 21:56:03,959 DEBUG urllib3.connectionpool https://data.cityofnewyork.us:443 "GET /resource/gkne-dk5p.json HTTP/1.1" 404 None
+2025-11-06 21:56:04,277 DEBUG urllib3.connectionpool https://data.cityofnewyork.us:443 "GET /resource/9b9u-2p9y.json HTTP/1.1" 404 None
+2025-11-06 21:56:04,346 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 21:56:04] "GET /api/v1/taxi/metadata HTTP/1.1" 200 -
+2025-11-06 21:56:57,140 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 21:56:57] "GET /api/v1/uber HTTP/1.1" 200 -
+2025-11-06 21:57:34,190 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 21:57:34] "[35m[1mPOST /api/v1/taxi/transform HTTP/1.1[0m" 500 -
+2025-11-06 21:57:51,690 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 21:57:51] "GET /api/v1/uber HTTP/1.1" 200 -
+2025-11-06 21:57:51,705 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 21:57:51] "GET /api/v1/uber HTTP/1.1" 200 -
+2025-11-06 21:57:51,719 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 21:57:51] "GET /api/v1/uber HTTP/1.1" 200 -
+2025-11-06 21:57:51,731 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 21:57:51] "GET /api/v1/uber HTTP/1.1" 200 -
+2025-11-06 21:57:51,745 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 21:57:51] "GET /api/v1/uber HTTP/1.1" 200 -
+2025-11-06 21:58:25,172 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 21:58:25] "[31m[1mGET /api/v1/uber HTTP/1.1[0m" 401 -
+2025-11-06 21:59:18,816 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 21:59:18] "[31m[1mGET /api/v1/taxi/trips?limit=1500 HTTP/1.1[0m" 400 -
+2025-11-06 21:59:52,940 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 21:59:52] "POST /api/v1/taxi/transform HTTP/1.1" 200 -
+2025-11-06 22:00:10,132 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 22:00:10] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-06 22:00:10,138 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 22:00:10] "[33mGET /api/v1/taxi HTTP/1.1[0m" 404 -
+2025-11-06 22:00:10,143 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 22:00:10] "[31m[1mGET /api/v1/uber HTTP/1.1[0m" 401 -
+2025-11-06 22:00:10,147 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 22:00:10] "[31m[1mGET /api/v1/transit HTTP/1.1[0m" 401 -
+2025-11-06 22:00:10,151 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 22:00:10] "[31m[1mGET /api/v1/analytics/patterns HTTP/1.1[0m" 401 -
+2025-11-06 22:00:10,155 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 22:00:10] "[31m[1mGET /api/v1/analytics/demand HTTP/1.1[0m" 401 -
+2025-11-06 22:00:32,060 INFO werkzeug  * Detected change in '/home/kzer00/Documents/Urban Mobility & Transportation Analytics ETL/test_api.py', reloading
+2025-11-06 22:00:32,279 INFO werkzeug  * Restarting with stat
+2025-11-06 22:00:33,515 WARNING werkzeug  * Debugger is active!
+2025-11-06 22:00:33,519 INFO werkzeug  * Debugger PIN: 839-453-592
+2025-11-06 22:00:49,396 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 22:00:49] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-06 22:00:49,404 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 22:00:49] "POST /api/v1/auth/login HTTP/1.1" 200 -
+2025-11-06 22:00:49,409 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 22:00:49] "POST /api/v1/auth/login HTTP/1.1" 200 -
+2025-11-06 22:00:49,418 DEBUG urllib3.connectionpool Starting new HTTPS connection (1): data.cityofnewyork.us:443
+2025-11-06 22:00:50,988 DEBUG urllib3.connectionpool https://data.cityofnewyork.us:443 "GET /resource/t29m-gskq.json?%24limit=5&%24offset=0&%24order=pickup_datetime+DESC HTTP/1.1" 400 None
+2025-11-06 22:00:50,991 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 22:00:50] "GET /api/v1/taxi/trips?limit=5 HTTP/1.1" 200 -
+2025-11-06 22:00:50,997 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 22:00:50] "GET /api/v1/uber HTTP/1.1" 200 -
+2025-11-06 22:00:51,002 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 22:00:51] "GET /api/v1/transit HTTP/1.1" 200 -
+2025-11-06 22:00:51,007 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 22:00:51] "GET /api/v1/analytics/patterns HTTP/1.1" 200 -
+2025-11-06 22:00:51,011 INFO werkzeug 127.0.0.1 - - [06/Nov/2025 22:00:51] "GET /api/v1/analytics/demand HTTP/1.1" 200 -
+2025-11-06 22:30:52,376 INFO werkzeug  * Detected change in '/home/kzer00/Documents/Urban Mobility & Transportation Analytics ETL/test_api.py', reloading
+2025-11-06 22:30:54,167 INFO werkzeug  * Restarting with stat
+2025-11-06 22:30:56,076 WARNING werkzeug  * Debugger is active!
+2025-11-06 22:30:56,085 INFO werkzeug  * Debugger PIN: 839-453-592
+2025-11-06 22:32:38,569 INFO werkzeug  * Detected change in '/home/kzer00/Documents/Urban Mobility & Transportation Analytics ETL/test_gold_layer.py', reloading
+2025-11-06 22:32:38,923 INFO werkzeug  * Restarting with stat
+2025-11-06 22:32:40,241 WARNING werkzeug  * Debugger is active!
+2025-11-06 22:32:40,247 INFO werkzeug  * Debugger PIN: 839-453-592
+2025-11-06 22:39:21,303 INFO werkzeug  * Detected change in '/home/kzer00/Documents/Urban Mobility & Transportation Analytics ETL/test_gold_layer.py', reloading
+2025-11-06 22:39:21,517 INFO werkzeug  * Restarting with stat
+2025-11-06 22:39:22,797 WARNING werkzeug  * Debugger is active!
+2025-11-06 22:39:22,801 INFO werkzeug  * Debugger PIN: 839-453-592
+2025-11-06 22:55:49,277 INFO werkzeug  * Detected change in '/home/kzer00/Documents/Urban Mobility & Transportation Analytics ETL/tests/test_comprehensive_end_to_end.py', reloading
+2025-11-06 22:55:49,516 INFO werkzeug  * Restarting with stat
+2025-11-06 22:55:50,679 WARNING werkzeug  * Debugger is active!
+2025-11-06 22:55:50,683 INFO werkzeug  * Debugger PIN: 839-453-592
+2025-11-06 22:57:31,010 INFO werkzeug  * Detected change in '/home/kzer00/Documents/Urban Mobility & Transportation Analytics ETL/run_all_tests.py', reloading
+2025-11-06 22:57:31,212 INFO werkzeug  * Restarting with stat
+2025-11-06 22:57:32,500 WARNING werkzeug  * Debugger is active!
+2025-11-06 22:57:32,503 INFO werkzeug  * Debugger PIN: 839-453-592
+2025-11-06 22:59:51,255 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:51,438 INFO src.data.database Data saved to database table: test_table
+2025-11-06 22:59:51,506 INFO src.data.database Data loaded from database table: test_table
+2025-11-06 22:59:51,565 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:51,752 INFO src.data.database Data saved to database table: test_table
+2025-11-06 22:59:51,818 INFO src.data.database Data loaded from database table: test_table
+2025-11-06 22:59:51,879 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:51,943 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:52,012 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:52,075 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:52,136 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:52,237 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:52,302 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:52,361 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:52,421 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:52,482 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:52,561 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:52,619 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:52,683 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:52,746 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:52,809 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:53,141 INFO src.data.database Data saved to database table: trips_test
+2025-11-06 22:59:53,227 INFO src.data.database Data saved to database table: uber_travel_times_test
+2025-11-06 22:59:53,318 INFO src.data.database Data saved to database table: mta_status_test
+2025-11-06 22:59:53,388 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:53,455 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:53,520 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:53,586 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:53,653 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:53,751 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:53,837 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:53,907 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:53,986 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:54,047 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:54,141 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 22:59:54,475 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:02,996 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:03,023 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:03,051 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:03,179 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:03,204 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:03,229 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:04,540 INFO src.data.database Data saved to database table: performance_test
+2025-11-06 23:00:04,766 INFO src.data.database Data loaded from database table: performance_test
+2025-11-06 23:00:04,791 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:04,817 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:04,842 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:38,043 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:38,071 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:38,100 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:38,136 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:38,161 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:38,203 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:38,230 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:38,258 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:38,286 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:38,313 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:38,528 INFO src.data.database Data saved to database table: trips_test
+2025-11-06 23:00:38,628 INFO src.data.database Data saved to database table: uber_travel_times_test
+2025-11-06 23:00:38,728 INFO src.data.database Data saved to database table: mta_status_test
+2025-11-06 23:00:38,816 INFO src.data.database Data loaded from database table: trips_test
+2025-11-06 23:00:38,893 INFO src.data.database Data loaded from database table: uber_travel_times_test
+2025-11-06 23:00:38,971 INFO src.data.database Data loaded from database table: mta_status_test
+2025-11-06 23:00:39,003 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,036 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,068 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,098 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,129 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,175 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,206 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,240 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,272 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,305 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,407 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,456 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,517 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,569 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,619 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,696 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,746 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,796 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,848 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,897 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:39,973 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:40,196 INFO src.data.database Data saved to database table: comprehensive_test_table
+2025-11-06 23:00:40,272 INFO src.data.database Data loaded from database table: comprehensive_test_table
+2025-11-06 23:00:40,338 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:40,622 INFO src.data.database Data saved to database table: performance_test_table
+2025-11-06 23:00:40,701 INFO src.data.database Data loaded from database table: performance_test_table
+2025-11-06 23:00:40,765 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-06 23:00:40,990 INFO src.data.database Data saved to database table: types_test_table
+2025-11-06 23:00:41,060 INFO src.data.database Data loaded from database table: types_test_table
+2025-11-06 23:00:41,130 INFO src.data.database Data saved to database table: table1
+2025-11-06 23:00:41,199 INFO src.data.database Data saved to database table: table2
+2025-11-06 23:00:41,279 INFO src.data.database Data saved to database table: table3
+2025-11-06 23:00:41,325 INFO src.data.database Data loaded from database table: table1
+2025-11-06 23:00:41,356 INFO src.data.database Data loaded from database table: table2
+2025-11-06 23:00:41,386 INFO src.data.database Data loaded from database table: table3
+2025-11-06 23:10:50,095 INFO werkzeug  * Detected change in '/home/kzer00/Documents/Urban Mobility & Transportation Analytics ETL/run.py', reloading
+2025-11-06 23:10:50,290 INFO werkzeug  * Restarting with stat
