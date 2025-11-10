@@ -2,11 +2,17 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Sidebar.css';
 
-const Sidebar = () => {
+const Sidebar = ({ collapsed = false, onToggle = () => {} }) => {
   const location = useLocation();
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
+      <div className="sidebar-top">
+        <button className="toggle-btn" onClick={onToggle} aria-label="Toggle sidebar">
+          {collapsed ? '➡️' : '⬅️'}
+        </button>
+        {!collapsed && <div className="brand">Urban Mobility</div>}
+      </div>
       <nav className="sidebar-nav">
         <ul>
           <li>

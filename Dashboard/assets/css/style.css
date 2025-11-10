@@ -1,0 +1,57 @@
+/* Header layout to the right of the sidebar */
+:root {
+	--sidebar-width: 260px; /* adjust if your sidebar has a different width */
+	--header-height: 64px;
+}
+
+.site-header {
+	position: fixed;
+	top: 0;
+	left: var(--sidebar-width); /* sits to the right of the sidebar */
+	right: 0;
+	height: var(--header-height);
+	background: #ffffff;
+	border-bottom: 3px solid #1f88d8; /* subtle accent line */
+	display: flex;
+	align-items: center;
+	z-index: 1000;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.site-header__inner {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.site-title {
+	font-size: 20px;
+	font-weight: 600;
+	color: #2b3e50;
+}
+
+/* small utilities on the right of the header */
+.site-utils {
+	font-size: 14px;
+	color: #57707f;
+}
+
+/* ensure main content is pushed below the fixed header */
+.content {
+	/* if your page has a wrapper class, you can adapt this rule */
+	padding-top: calc(var(--header-height) + 20px); /* leave space for header + small gap */
+	/* ...existing content rules... */
+}
+
+/* responsive tweak for small screens: header spans full width, and sidebar becomes overlayed (no change to sidebar code here) */
+@media (max-width: 900px) {
+	:root { --sidebar-width: 0px; }
+	.site-header { left: 0; }
+	/* if sidebar becomes overlay, ensure content padding still works */
+}
+
+/* ...existing code... */
