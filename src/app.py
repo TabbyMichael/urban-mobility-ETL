@@ -33,12 +33,63 @@ def create_app():
         return jsonify({
             "message": "Urban Mobility & Transportation Analytics ETL API",
             "version": "1.0",
+            "description": "A unified data pipeline that extracts, transforms, and loads NYC taxi, Uber, and public transit data into an analytical warehouse for traffic pattern analysis, ride demand prediction, and anomaly detection.",
+            "documentation": "https://github.com/your-org/urban-mobility-analytics#api-endpoints",
             "endpoints": {
-                "authentication": "/api/v1/auth",
-                "taxi_data": "/api/v1/taxi",
-                "uber_data": "/api/v1/uber",
-                "transit_data": "/api/v1/transit",
-                "realtime": "WebSocket connection at /socket.io/"
+                "authentication": {
+                    "description": "User authentication and authorization",
+                    "routes": {
+                        "login": "POST /api/v1/auth/login",
+                        "register": "POST /api/v1/auth/register"
+                    }
+                },
+                "health": {
+                    "description": "System health and monitoring",
+                    "routes": {
+                        "overall": "GET /api/v1/health",
+                        "database": "GET /api/v1/health/database",
+                        "auth": "GET /api/v1/health/auth"
+                    }
+                },
+                "taxi_data": {
+                    "description": "NYC taxi trip data from TLC",
+                    "routes": {
+                        "metadata": "GET /api/v1/taxi/metadata",
+                        "trips": "GET /api/v1/taxi/trips",
+                        "historical": "GET /api/v1/taxi/historical",
+                        "transform": "POST /api/v1/taxi/transform",
+                        "load": "POST /api/v1/taxi/load"
+                    }
+                },
+                "uber_data": {
+                    "description": "Uber Movement travel times and speeds",
+                    "routes": {
+                        "travel_times": "GET /api/v1/uber/travel-times",
+                        "speeds": "GET /api/v1/uber/speeds"
+                    }
+                },
+                "transit_data": {
+                    "description": "MTA GTFS real-time transit feeds",
+                    "routes": {
+                        "realtime": "GET /api/v1/transit/realtime",
+                        "alerts": "GET /api/v1/transit/alerts"
+                    }
+                },
+                "analytics": {
+                    "description": "Traffic patterns and demand forecasting",
+                    "routes": {
+                        "patterns": "GET /api/v1/analytics/patterns",
+                        "demand": "GET /api/v1/analytics/demand"
+                    }
+                },
+                "realtime": {
+                    "description": "WebSocket connection for real-time data streaming",
+                    "connection": "WebSocket connection at /socket.io/"
+                }
+            },
+            "authentication": {
+                "required": "Most endpoints require JWT Bearer token in Authorization header",
+                "format": "Authorization: Bearer <your_token>"
             }
         })
     

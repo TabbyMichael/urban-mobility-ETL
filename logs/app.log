@@ -215,3 +215,176 @@
 2025-11-08 13:22:40,403 INFO src.data.database Successfully connected to PostgreSQL database
 2025-11-08 13:22:40,431 INFO src.data.database Successfully connected to PostgreSQL database
 2025-11-08 13:22:40,456 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:41:34,982 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 13:41:35,029 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.110:5000
+2025-11-08 13:41:35,029 INFO werkzeug [33mPress CTRL+C to quit[0m
+2025-11-08 13:41:38,332 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:41:38] "GET /socket.io/?EIO=4&transport=polling&t=5mxi3s1k HTTP/1.1" 200 -
+2025-11-08 13:41:38,337 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:41:38] "POST /socket.io/?EIO=4&transport=polling&t=5mxi6uta&sid=cOhJ6U_ylyu9wScAAAAA HTTP/1.1" 200 -
+2025-11-08 13:41:38,338 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:41:38] "GET /socket.io/?EIO=4&transport=polling&t=5mxi7ull&sid=cOhJ6U_ylyu9wScAAAAA HTTP/1.1" 200 -
+2025-11-08 13:41:38,341 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:41:38] "GET /socket.io/?EIO=4&transport=polling&t=5mxicqd7&sid=cOhJ6U_ylyu9wScAAAAA HTTP/1.1" 200 -
+2025-11-08 13:41:38,344 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:41:38] "POST /socket.io/?EIO=4&transport=polling&t=5mxicboc&sid=cOhJ6U_ylyu9wScAAAAA HTTP/1.1" 200 -
+2025-11-08 13:41:38,348 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:41:38] "GET /socket.io/?EIO=4&transport=polling&t=5mxijouf&sid=cOhJ6U_ylyu9wScAAAAA HTTP/1.1" 200 -
+2025-11-08 13:43:04,010 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:04] "GET /socket.io/?EIO=4&transport=websocket&sid=cOhJ6U_ylyu9wScAAAAA HTTP/1.1" 200 -
+2025-11-08 13:43:04,801 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:04] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-08 13:43:04,827 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:04] "GET /socket.io/?EIO=4&transport=polling&t=5os8p56b HTTP/1.1" 200 -
+2025-11-08 13:43:04,828 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:04] "GET /socket.io/?EIO=4&transport=polling&t=5os8qocc HTTP/1.1" 200 -
+2025-11-08 13:43:04,832 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:04] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-08 13:43:04,860 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:04] "POST /socket.io/?EIO=4&transport=polling&t=5os9k0ls&sid=bInCJWQ7aTHxxECQAAAD HTTP/1.1" 200 -
+2025-11-08 13:43:04,860 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:04] "GET /socket.io/?EIO=4&transport=polling&t=5os9k3ke&sid=bInCJWQ7aTHxxECQAAAD HTTP/1.1" 200 -
+2025-11-08 13:43:04,867 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:04] "GET /socket.io/?EIO=4&transport=polling&t=5os9tk32&sid=bInCJWQ7aTHxxECQAAAD HTTP/1.1" 200 -
+2025-11-08 13:43:04,868 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:04] "POST /socket.io/?EIO=4&transport=polling&t=5os9tjtg&sid=bInCJWQ7aTHxxECQAAAD HTTP/1.1" 200 -
+2025-11-08 13:43:55,990 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:55] "GET /socket.io/?EIO=4&transport=websocket&sid=bInCJWQ7aTHxxECQAAAD HTTP/1.1" 200 -
+2025-11-08 13:43:56,206 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:56] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-08 13:43:56,228 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:56] "GET /socket.io/?EIO=4&transport=polling&t=5pvwi1wv HTTP/1.1" 200 -
+2025-11-08 13:43:56,230 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:56] "GET /socket.io/?EIO=4&transport=polling&t=5pvwj5dj HTTP/1.1" 200 -
+2025-11-08 13:43:56,232 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:56] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-08 13:43:56,256 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:56] "POST /socket.io/?EIO=4&transport=polling&t=5pvx9xew&sid=j6nuKe47iAvwmNs1AAAG HTTP/1.1" 200 -
+2025-11-08 13:43:56,257 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:56] "GET /socket.io/?EIO=4&transport=polling&t=5pvxbs1o&sid=j6nuKe47iAvwmNs1AAAG HTTP/1.1" 200 -
+2025-11-08 13:43:56,263 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:56] "GET /socket.io/?EIO=4&transport=polling&t=5pvxhpad&sid=j6nuKe47iAvwmNs1AAAG HTTP/1.1" 200 -
+2025-11-08 13:43:56,265 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:56] "POST /socket.io/?EIO=4&transport=polling&t=5pvxizt9&sid=j6nuKe47iAvwmNs1AAAG HTTP/1.1" 200 -
+2025-11-08 13:43:56,275 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 13:43:56] "GET /socket.io/?EIO=4&transport=polling&t=5pvxumwj&sid=j6nuKe47iAvwmNs1AAAG HTTP/1.1" 200 -
+2025-11-08 17:50:21,162 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 17:50:21] "GET /socket.io/?EIO=4&transport=websocket&sid=j6nuKe47iAvwmNs1AAAG HTTP/1.1" 200 -
+2025-11-08 18:49:35,254 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:49:35] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-08 18:49:35,279 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:49:35] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-08 18:52:17,328 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 18:52:54,443 INFO src.config.logging Root endpoint accessed
+2025-11-08 18:52:54,443 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:52:54] "GET / HTTP/1.1" 200 -
+2025-11-08 18:52:54,624 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:52:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-08 18:53:01,269 INFO src.config.logging Root endpoint accessed
+2025-11-08 18:53:01,269 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:53:01] "GET / HTTP/1.1" 200 -
+2025-11-08 18:53:56,946 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:53:56] "[33mGET /api/v1/auth HTTP/1.1[0m" 404 -
+2025-11-08 18:54:02,467 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:54:02] "[33mGET /api/v1/auth HTTP/1.1[0m" 404 -
+2025-11-08 18:54:06,686 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:54:06] "[33mGET /api/v1/auth HTTP/1.1[0m" 404 -
+2025-11-08 18:54:11,590 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:54:11] "[33mGET /api/v1/auth HTTP/1.1[0m" 404 -
+2025-11-08 18:54:16,678 INFO src.config.logging Root endpoint accessed
+2025-11-08 18:54:16,678 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:54:16] "GET / HTTP/1.1" 200 -
+2025-11-08 18:54:34,834 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:54:34] "[33mGET /api HTTP/1.1[0m" 404 -
+2025-11-08 18:54:39,638 INFO src.config.logging Root endpoint accessed
+2025-11-08 18:54:39,638 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:54:39] "GET / HTTP/1.1" 200 -
+2025-11-08 18:55:11,406 ERROR src.data.database Query execution error: Connection.execute() got an unexpected keyword argument 'username'
+2025-11-08 18:55:11,407 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:55:11] "[31m[1mPOST /api/v1/auth/login HTTP/1.1[0m" 401 -
+2025-11-08 18:55:21,293 INFO src.config.logging Registration endpoint accessed
+2025-11-08 18:55:21,294 ERROR src.data.database Query execution error: Connection.execute() got an unexpected keyword argument 'username'
+2025-11-08 18:55:21,294 ERROR src.data.database Query execution error: Connection.execute() got an unexpected keyword argument 'username'
+2025-11-08 18:55:21,295 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:55:21] "[35m[1mPOST /api/v1/auth/register HTTP/1.1[0m" 201 -
+2025-11-08 18:55:29,397 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:55:29] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-08 18:55:38,594 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:55:38] "GET /api/v1/health/database HTTP/1.1" 200 -
+2025-11-08 18:55:45,151 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:55:45] "[31m[1mGET /api/v1/taxi/metadata HTTP/1.1[0m" 401 -
+2025-11-08 18:55:52,260 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:55:52] "[31m[1mGET /api/v1/taxi/trips?limit=10 HTTP/1.1[0m" 401 -
+2025-11-08 18:56:00,199 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:56:00] "[31m[1mGET /api/v1/uber/travel-times?source_id=1001&dst_id=2001 HTTP/1.1[0m" 401 -
+2025-11-08 18:56:07,212 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:56:07] "[31m[1mGET /api/v1/uber/speeds?city_id=1 HTTP/1.1[0m" 401 -
+2025-11-08 18:56:13,205 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:56:13] "[31m[1mGET /api/v1/transit/alerts HTTP/1.1[0m" 401 -
+2025-11-08 18:56:21,331 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:56:21] "[31m[1mGET /api/v1/analytics/patterns HTTP/1.1[0m" 401 -
+2025-11-08 18:56:27,486 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:56:27] "[31m[1mGET /api/v1/analytics/demand HTTP/1.1[0m" 401 -
+2025-11-08 18:56:53,233 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 18:56:53,276 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.110:5000
+2025-11-08 18:56:53,276 INFO werkzeug [33mPress CTRL+C to quit[0m
+2025-11-08 18:57:32,538 INFO src.config.logging Root endpoint accessed
+2025-11-08 18:57:32,538 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:57:32] "GET / HTTP/1.1" 200 -
+2025-11-08 18:58:23,316 INFO src.config.logging Root endpoint accessed
+2025-11-08 18:58:23,316 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:58:23] "GET / HTTP/1.1" 200 -
+2025-11-08 18:58:46,759 ERROR src.data.database Query execution error: Connection.execute() got an unexpected keyword argument 'username'
+2025-11-08 18:58:46,760 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:58:46] "[31m[1mPOST /api/v1/auth/login HTTP/1.1[0m" 401 -
+2025-11-08 18:58:56,539 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 18:58:56] "[31m[1mGET /api/v1/taxi/metadata HTTP/1.1[0m" 401 -
+2025-11-08 19:18:45,282 ERROR src.data.database Query execution error: Connection.execute() got an unexpected keyword argument 'username'
+2025-11-08 19:18:45,283 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 19:18:45] "[31m[1mPOST /api/v1/auth/login HTTP/1.1[0m" 401 -
+2025-11-08 19:26:11,339 ERROR src.data.database Query execution error: Connection.execute() got an unexpected keyword argument 'username'
+2025-11-08 19:26:11,340 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 19:26:11] "[31m[1mPOST /api/v1/auth/login HTTP/1.1[0m" 401 -
+2025-11-08 19:27:14,133 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 19:27:14,171 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.110:5000
+2025-11-08 19:27:14,171 INFO werkzeug [33mPress CTRL+C to quit[0m
+2025-11-08 19:28:30,283 INFO src.config.logging Registration endpoint accessed
+2025-11-08 19:28:30,284 ERROR src.data.database Query execution error: Connection.execute() got an unexpected keyword argument 'username'
+2025-11-08 19:28:30,537 ERROR src.data.database Query execution error: Connection.execute() got an unexpected keyword argument 'username'
+2025-11-08 19:28:30,538 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 19:28:30] "[35m[1mPOST /api/v1/auth/register HTTP/1.1[0m" 201 -
+2025-11-08 19:28:51,771 ERROR src.data.database Query execution error: Connection.execute() got an unexpected keyword argument 'username'
+2025-11-08 19:28:51,772 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 19:28:51] "[31m[1mPOST /api/v1/auth/login HTTP/1.1[0m" 401 -
+2025-11-08 19:34:53,366 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-08 19:34:53,402 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.110:5000
+2025-11-08 19:34:53,402 INFO werkzeug [33mPress CTRL+C to quit[0m
+2025-11-08 19:36:15,143 ERROR src.data.database Query execution error: List argument must consist only of dictionaries
+2025-11-08 19:36:15,145 INFO werkzeug 127.0.0.1 - - [08/Nov/2025 19:36:15] "[31m[1mPOST /api/v1/auth/login HTTP/1.1[0m" 401 -
+2025-11-10 10:46:40,690 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-10 10:46:40,735 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.120:5000
+2025-11-10 10:46:40,735 INFO werkzeug [33mPress CTRL+C to quit[0m
+2025-11-10 10:46:48,306 INFO src.config.logging Root endpoint accessed
+2025-11-10 10:46:48,307 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:46:48] "GET / HTTP/1.1" 200 -
+2025-11-10 10:46:48,330 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:46:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-10 10:47:11,665 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:47:11] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:47:11,687 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:47:11] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:47:28,451 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:47:28] "GET /socket.io/?EIO=4&transport=polling&t=uannjovb HTTP/1.1" 200 -
+2025-11-10 10:47:28,451 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:47:28] "GET /socket.io/?EIO=4&transport=polling&t=uannkhg3 HTTP/1.1" 200 -
+2025-11-10 10:47:28,473 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:47:28] "POST /socket.io/?EIO=4&transport=polling&t=uano7xxk&sid=Jn4AJVOMDVZn-ofGAAAB HTTP/1.1" 200 -
+2025-11-10 10:47:28,474 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:47:28] "GET /socket.io/?EIO=4&transport=polling&t=uano7d09&sid=Jn4AJVOMDVZn-ofGAAAB HTTP/1.1" 200 -
+2025-11-10 10:47:28,480 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:47:28] "GET /socket.io/?EIO=4&transport=polling&t=uanoel6q&sid=Jn4AJVOMDVZn-ofGAAAB HTTP/1.1" 200 -
+2025-11-10 10:47:28,483 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:47:28] "POST /socket.io/?EIO=4&transport=polling&t=uanofkez&sid=Jn4AJVOMDVZn-ofGAAAB HTTP/1.1" 200 -
+2025-11-10 10:47:28,490 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:47:28] "GET /socket.io/?EIO=4&transport=polling&t=uanop9yq&sid=Jn4AJVOMDVZn-ofGAAAB HTTP/1.1" 200 -
+2025-11-10 10:47:40,822 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:47:40] "GET /socket.io/?EIO=4&transport=websocket&sid=Jn4AJVOMDVZn-ofGAAAB HTTP/1.1" 200 -
+2025-11-10 10:48:44,990 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:48:44] "GET /socket.io/?EIO=4&transport=polling&t=ucapo35m HTTP/1.1" 200 -
+2025-11-10 10:48:44,991 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:48:44] "GET /socket.io/?EIO=4&transport=polling&t=ucappni3 HTTP/1.1" 200 -
+2025-11-10 10:48:45,012 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:48:45] "POST /socket.io/?EIO=4&transport=polling&t=ucaq92xz&sid=V0HJMDUKxORKxFm0AAAE HTTP/1.1" 200 -
+2025-11-10 10:48:45,012 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:48:45] "GET /socket.io/?EIO=4&transport=polling&t=ucaqacis&sid=V0HJMDUKxORKxFm0AAAE HTTP/1.1" 200 -
+2025-11-10 10:48:45,017 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:48:45] "GET /socket.io/?EIO=4&transport=polling&t=ucaqgcrg&sid=V0HJMDUKxORKxFm0AAAE HTTP/1.1" 200 -
+2025-11-10 10:48:45,019 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:48:45] "POST /socket.io/?EIO=4&transport=polling&t=ucaqh0gq&sid=V0HJMDUKxORKxFm0AAAE HTTP/1.1" 200 -
+2025-11-10 10:48:45,024 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:48:45] "GET /socket.io/?EIO=4&transport=polling&t=ucaqn9xg&sid=V0HJMDUKxORKxFm0AAAE HTTP/1.1" 200 -
+2025-11-10 10:48:50,592 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:48:50] "GET /socket.io/?EIO=4&transport=websocket&sid=V0HJMDUKxORKxFm0AAAE HTTP/1.1" 200 -
+2025-11-10 10:50:27,440 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:50:27] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:50:27,460 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:50:27] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:51:11,427 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:51:11] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:51:11,429 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:51:11] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:51:52,017 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:51:52] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:51:57,629 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:51:57] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:51:57,652 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:51:57] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:51:59,258 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:51:59] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:51:59,278 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:51:59] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:53:30,319 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:53:30] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:53:30,340 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:53:30] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:53:41,308 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:53:41] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:53:41,325 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:53:41] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:53:55,149 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:53:55] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:53:55,167 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:53:55] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:53:56,972 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:53:56] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:53:56,990 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:53:56] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:53:59,218 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:53:59] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:53:59,234 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:53:59] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:53:59,843 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:53:59] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:53:59,863 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:53:59] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:54:03,983 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:54:03] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:54:04,001 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:54:04] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:54:44,613 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:54:44] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:54:44,634 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:54:44] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:54:45,603 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:54:45] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 10:54:45,619 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 10:54:45] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:41:19,679 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:41:19] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:41:19,694 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:41:19] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:41:58,675 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:41:58] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:41:58,694 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:41:58] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:45:14,621 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:45:14] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:45:14,637 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:45:14] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:45:15,501 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:45:15] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:45:15,517 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:45:15] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:45:16,154 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:45:16] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:45:16,169 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:45:16] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:46:43,836 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:46:43] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:46:43,854 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:46:43] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:46:45,083 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:46:45] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:46:45,098 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:46:45] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:47:17,574 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:47:17] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:47:17,574 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:47:17] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:47:18,546 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:47:18] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 11:47:18,547 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 11:47:18] "GET /api/v1/health HTTP/1.1" 200 -

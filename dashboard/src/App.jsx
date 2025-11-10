@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
 import Analytics from './components/Analytics';
@@ -13,6 +12,7 @@ import './components/AppLayout.css';
 function App() {
   const [isBackendHealthy, setIsBackendHealthy] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   useEffect(() => {
     // Check backend health
@@ -47,10 +47,12 @@ function App() {
 
   return (
     <Router>
-      <div className="app">
-        <Header />
+      <div className={`app ${isSidebarCollapsed ? 'sidebar-collapsed' : ''}`}>
         <div className="main-container">
-          <Sidebar />
+          <Sidebar 
+            collapsed={isSidebarCollapsed} 
+            onToggle={() => setIsSidebarCollapsed(prev => !prev)} 
+          />
           <div className="content">
             <Routes>
               <Route path="/" element={<Dashboard />} />

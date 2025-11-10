@@ -120,7 +120,22 @@ class DatabaseManager:
             try:
                 with self.engine.connect() as conn:
                     if params:
-                        result = conn.execute(text(query), **params)
+                        # Use dictionary parameters for named parameters
+                        if isinstance(params, dict):
+                            # For named parameters, we can pass them as a dictionary
+                            result = conn.execute(text(query), params)
+                        # Use tuple/list parameters - convert to dictionary for SQLAlchemy 2.0
+                        elif isinstance(params, (tuple, list)):
+                            # Convert tuple/list to dictionary with named parameters
+                            param_dict = {f"param_{i+1}": param for i, param in enumerate(params)}
+                            # Replace %s placeholders with named placeholders
+                            named_query = query
+                            for i in range(len(params)):
+                                named_query = named_query.replace("%s", f":param_{i+1}", 1)
+                            result = conn.execute(text(named_query), param_dict)
+                        else:
+                            # Handle single parameter
+                            result = conn.execute(text(query.replace("%s", ":param")), {"param": params})
                     else:
                         result = conn.execute(text(query))
                     # Convert result to DataFrame using pandas built-in method
@@ -130,6 +145,9 @@ class DatabaseManager:
                     return df
             except Exception as e:
                 self.logger.error(f"Query execution error: {e}")
+                self.logger.error(f"Query: {query}, Params: {params}")
+                if params and isinstance(params, (tuple, list)):
+                    self.logger.error(f"Params type: {type(params)}, Params content: {params}")
                 return pd.DataFrame()
         else:
             self.logger.warning("Cannot execute query: No database connection")
@@ -146,11 +164,10 @@ class DatabaseManager:
                 script = file.read()
             
             # Split script into individual statements
-            statements = script.split(';')
+            statements = [s.strip() for s in script.split(';') if s.strip()]
             
             with self.engine.connect() as conn:
                 for statement in statements:
-                    statement = statement.strip()
                     if statement:
                         conn.execute(text(statement))
                 conn.commit()

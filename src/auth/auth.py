@@ -1,6 +1,5 @@
 import jwt
-import hashlib
-import base64
+import bcrypt
 from datetime import datetime, timedelta
 import os
 from typing import Optional, Dict, Any
@@ -12,15 +11,14 @@ class AuthManager:
         self.db_manager = DatabaseManager()
         
     def hash_password(self, password: str) -> str:
-        """Hash a password using SHA-256 (simplified for this example)"""
-        # In production, use bcrypt or similar
-        salt = "somesalt"  # In production, use a proper random salt
-        hashed = hashlib.sha256((password + salt).encode()).hexdigest()
-        return hashed
+        """Hash a password using bcrypt"""
+        salt = bcrypt.gensalt()
+        hashed = bcrypt.hashpw(password.encode('utf-8'), salt)
+        return hashed.decode('utf-8')
     
     def verify_password(self, password: str, hashed: str) -> bool:
         """Verify a password against its hash"""
-        return self.hash_password(password) == hashed
+        return bcrypt.checkpw(password.encode('utf-8'), hashed.encode('utf-8'))
     
     def generate_token(self, username: str, role: str = 'user') -> str:
         """Generate a JWT token"""
@@ -46,8 +44,8 @@ class AuthManager:
         """Authenticate a user and return token if successful"""
         try:
             # Query user from database
-            query = "SELECT id, username, password_hash, role FROM users WHERE username = :username"
-            df = self.db_manager.execute_query(query, {"username": username})
+            query = "SELECT id, username, password_hash, role FROM users WHERE username = %s"
+            df = self.db_manager.execute_query(query, (username,))
             
             if df.empty:
                 return None  # User not found
@@ -58,11 +56,8 @@ class AuthManager:
             # Verify password
             if self.verify_password(password, stored_hash):
                 # Update last login
-                update_query = "UPDATE users SET last_login = :last_login WHERE username = :username"
-                self.db_manager.execute_query(update_query, {
-                    "last_login": datetime.utcnow(),
-                    "username": username
-                })
+                update_query = "UPDATE users SET last_login = %s WHERE username = %s"
+                self.db_manager.execute_query(update_query, (datetime.utcnow(), username))
                 
                 # Generate token
                 token = self.generate_token(username, user_row['role'])
@@ -81,8 +76,8 @@ class AuthManager:
         """Create a new user"""
         try:
             # Check if user already exists
-            check_query = "SELECT id FROM users WHERE username = :username"
-            df = self.db_manager.execute_query(check_query, {"username": username})
+            check_query = "SELECT id FROM users WHERE username = %s"
+            df = self.db_manager.execute_query(check_query, (username,))
             
             if not df.empty:
                 return False  # User already exists
@@ -93,13 +88,9 @@ class AuthManager:
             # Insert new user
             insert_query = """
                 INSERT INTO users (username, password_hash, role) 
-                VALUES (:username, :password_hash, :role)
+                VALUES (%s, %s, %s)
             """
-            self.db_manager.execute_query(insert_query, {
-                "username": username,
-                "password_hash": hashed_password,
-                "role": role
-            })
+            self.db_manager.execute_query(insert_query, (username, hashed_password, role))
             
             return True
         except Exception as e:
@@ -109,8 +100,8 @@ class AuthManager:
     def get_user_role(self, username: str) -> Optional[str]:
         """Get the role of a user"""
         try:
-            query = "SELECT role FROM users WHERE username = :username"
-            df = self.db_manager.execute_query(query, {"username": username})
+            query = "SELECT role FROM users WHERE username = %s"
+            df = self.db_manager.execute_query(query, (username,))
             
             if df.empty:
                 return None
