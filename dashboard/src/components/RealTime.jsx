@@ -4,6 +4,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import io from 'socket.io-client';
+import FullScreenChart from './FullScreenChart';
 
 // Fix for default marker icons in react-leaflet
 delete L.Icon.Default.prototype._getIconUrl;
@@ -100,18 +101,31 @@ const RealTime = () => {
   // Generate sample data for initial display
   const sampleCoordinates = generateRandomCoordinates(40.7128, -74.0060, 10);
   
-  // Prepare data for charts
-  const tripVolumeData = analyticsData.map((data, index) => ({
-    time: new Date().toLocaleTimeString(),
-    total_trips: data.total_trips || 0,
-    avg_fare: data.avg_fare ? parseFloat(data.avg_fare).toFixed(2) : 0
-  }));
+  // Prepare data for charts - FIXED VERSION
+  const tripVolumeData = analyticsData.map((data, index) => {
+    // Handle case where data might be undefined
+    if (!data) return { time: 'N/A', total_trips: 0, avg_fare: 0 };
+    
+    // Create a proper time label
+    const timeLabel = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    
+    return {
+      time: timeLabel,
+      total_trips: data.total_trips || 0,
+      avg_fare: data.avg_fare ? parseFloat(data.avg_fare) : 0
+    };
+  });
   
-  const fareDistributionData = taxiData.slice(-10).map((trip, index) => ({
-    id: index,
-    fare: trip.fare_amount ? parseFloat(trip.fare_amount) : 0,
-    distance: trip.trip_distance ? parseFloat(trip.trip_distance) : 0
-  }));
+  const fareDistributionData = taxiData.slice(-10).map((trip, index) => {
+    // Handle case where trip might be undefined
+    if (!trip) return { id: index, fare: 0, distance: 0 };
+    
+    return {
+      id: index,
+      fare: trip.fare_amount ? parseFloat(trip.fare_amount) : 0,
+      distance: trip.trip_distance ? parseFloat(trip.trip_distance) : 0
+    };
+  });
 
   return (
     <div>
@@ -142,8 +156,8 @@ const RealTime = () => {
             <h3 className="card-title">Avg. Fare</h3>
           </div>
           <div className="card-value">
-            ${analyticsData.length > 0 ? 
-              (analyticsData[analyticsData.length - 1].avg_fare || 0).toFixed(2) : 
+            ${analyticsData.length > 0 && analyticsData[analyticsData.length - 1] ? 
+              (parseFloat(analyticsData[analyticsData.length - 1].avg_fare) || 0).toFixed(2) : 
               '0.00'}
           </div>
           <p>Current average</p>
@@ -152,185 +166,221 @@ const RealTime = () => {
       
       <div className="card">
         <h3 className="card-title">Live Trip Map</h3>
-        <div className="maps-container" style={{ height: '500px', width: '100%' }}>
-          {mapLoaded ? (
-            <MapContainer 
-              center={center} 
-              zoom={12} 
-              style={{ height: '100%', width: '100%' }}
-              zoomControl={true}
-            >
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              
-              {taxiData.length > 0 ? (
-                taxiData.slice(-20).map((trip, index) => {
-                  // Generate random coordinates for demo since we don't have real pickup locations
-                  const position = [
-                    center[0] + (Math.random() - 0.5) * 0.1,
-                    center[1] + (Math.random() - 0.5) * 0.1
-                  ];
-                  
-                  return (
+        <FullScreenChart title="Live Trip Map">
+          <div className="maps-container" style={{ height: '500px', width: '100%' }}>
+            {mapLoaded ? (
+              <MapContainer 
+                center={center} 
+                zoom={12} 
+                style={{ height: '100%', width: '100%' }}
+                zoomControl={true}
+              >
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                
+                {taxiData.length > 0 ? (
+                  taxiData.slice(-20).map((trip, index) => {
+                    // Generate random coordinates for demo since we don't have real pickup locations
+                    const position = [
+                      center[0] + (Math.random() - 0.5) * 0.1,
+                      center[1] + (Math.random() - 0.5) * 0.1
+                    ];
+                    
+                    return (
+                      <Circle
+                        key={index}
+                        center={position}
+                        radius={Math.max(100, (trip.fare_amount || 10) * 50)}
+                        fillColor="#3388ff"
+                        color="#3388ff"
+                        fillOpacity={0.5}
+                        weight={1}
+                        eventHandlers={{
+                          mouseover: (e) => {
+                            e.target.setStyle({ fillOpacity: 0.8 });
+                          },
+                          mouseout: (e) => {
+                            e.target.setStyle({ fillOpacity: 0.5 });
+                          }
+                        }}
+                      >
+                        <Popup>
+                          <strong>Live Trip</strong><br />
+                          Fare: ${trip.fare_amount || 'N/A'}<br />
+                          Distance: {trip.trip_distance || 'N/A'} miles<br />
+                          Time: {new Date().toLocaleTimeString()}
+                        </Popup>
+                      </Circle>
+                    );
+                  })
+                ) : (
+                  sampleCoordinates.map(coord => (
                     <Circle
-                      key={index}
-                      center={position}
-                      radius={Math.max(100, (trip.fare_amount || 10) * 50)}
+                      key={coord.id}
+                      center={coord.position}
+                      radius={coord.fare * 20}
                       fillColor="#3388ff"
                       color="#3388ff"
                       fillOpacity={0.5}
                       weight={1}
+                      eventHandlers={{
+                        mouseover: (e) => {
+                          e.target.setStyle({ fillOpacity: 0.8 });
+                        },
+                        mouseout: (e) => {
+                          e.target.setStyle({ fillOpacity: 0.5 });
+                        }
+                      }}
                     >
                       <Popup>
-                        <strong>Live Trip</strong><br />
-                        Fare: ${trip.fare_amount || 'N/A'}<br />
-                        Distance: {trip.trip_distance || 'N/A'} miles<br />
-                        Time: {new Date().toLocaleTimeString()}
+                        <strong>Sample Trip</strong><br />
+                        Fare: ${coord.fare.toFixed(2)}<br />
+                        Distance: {coord.distance.toFixed(1)} miles
                       </Popup>
                     </Circle>
-                  );
-                })
-              ) : (
-                sampleCoordinates.map(coord => (
-                  <Circle
-                    key={coord.id}
-                    center={coord.position}
-                    radius={coord.fare * 20}
-                    fillColor="#3388ff"
-                    color="#3388ff"
-                    fillOpacity={0.5}
-                    weight={1}
-                  >
-                    <Popup>
-                      <strong>Sample Trip</strong><br />
-                      Fare: ${coord.fare.toFixed(2)}<br />
-                      Distance: {coord.distance.toFixed(1)} miles
-                    </Popup>
-                  </Circle>
-                ))
-              )}
-            </MapContainer>
-          ) : (
-            <div style={{ 
-              height: '100%', 
-              width: '100%', 
-              display: 'flex', 
-              alignItems: 'center', 
-              justifyContent: 'center',
-              backgroundColor: '#f0f0f0'
-            }}>
-              <p>Loading map...</p>
-            </div>
-          )}
-        </div>
+                  ))
+                )}
+              </MapContainer>
+            ) : (
+              <div style={{ 
+                height: '100%', 
+                width: '100%', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                backgroundColor: '#f0f0f0'
+              }}>
+                <p>Loading map...</p>
+              </div>
+            )}
+          </div>
+        </FullScreenChart>
       </div>
       
       <div className="analytics-grid">
         <div className="card">
           <h3 className="card-title">Trip Volume Over Time</h3>
-          <div className="chart-container">
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart
-                data={tripVolumeData}
-                margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis 
-                  dataKey="time" 
-                  angle={-45}
-                  textAnchor="end"
-                  height={60}
-                  tick={{ fontSize: 12 }}
-                />
-                <YAxis 
-                  yAxisId="trips"
-                  tick={{ fontSize: 12 }}
-                  tickFormatter={formatNumber}
-                />
-                <YAxis 
-                  yAxisId="fare"
-                  orientation="right"
-                  tick={{ fontSize: 12 }}
-                  tickFormatter={(value) => `$${value}`}
-                />
-                <Tooltip 
-                  formatter={(value, name) => {
-                    if (name === 'total_trips') {
-                      return [formatNumber(value), 'Trips'];
-                    } else {
-                      return [`$${value}`, 'Avg Fare'];
-                    }
-                  }}
-                />
-                <Legend />
-                <Line 
-                  yAxisId="trips"
-                  type="monotone" 
-                  dataKey="total_trips" 
-                  name="Total Trips" 
-                  stroke="#8884d8" 
-                  strokeWidth={2} 
-                  dot={{ r: 4 }}
-                />
-                <Line 
-                  yAxisId="fare"
-                  type="monotone" 
-                  dataKey="avg_fare" 
-                  name="Avg Fare" 
-                  stroke="#82ca9d" 
-                  strokeWidth={2} 
-                  dot={{ r: 4 }}
-                />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
+          <FullScreenChart title="Trip Volume Over Time">
+            <div className="chart-container">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart
+                  data={tripVolumeData}
+                  margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis 
+                    dataKey="time" 
+                    angle={-45}
+                    textAnchor="end"
+                    height={60}
+                    tick={{ fontSize: 12 }}
+                  />
+                  <YAxis 
+                    yAxisId="trips"
+                    tick={{ fontSize: 12 }}
+                    tickFormatter={formatNumber}
+                  />
+                  <YAxis 
+                    yAxisId="fare"
+                    orientation="right"
+                    tick={{ fontSize: 12 }}
+                    tickFormatter={(value) => `$${value}`}
+                  />
+                  <Tooltip 
+                    formatter={(value, name) => {
+                      if (name === 'total_trips') {
+                        return [formatNumber(value), 'Trips'];
+                      } else {
+                        return [`$${parseFloat(value).toFixed(2)}`, 'Avg Fare'];
+                      }
+                    }}
+                  />
+                  <Legend />
+                  <Line 
+                    yAxisId="trips"
+                    type="monotone" 
+                    dataKey="total_trips" 
+                    name="Total Trips" 
+                    stroke="#8884d8" 
+                    strokeWidth={2} 
+                    dot={{ r: 4 }}
+                    activeDot={{ r: 6 }}
+                  />
+                  <Line 
+                    yAxisId="fare"
+                    type="monotone" 
+                    dataKey="avg_fare" 
+                    name="Avg Fare" 
+                    stroke="#82ca9d" 
+                    strokeWidth={2} 
+                    dot={{ r: 4 }}
+                    activeDot={{ r: 6 }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          </FullScreenChart>
         </div>
         
         <div className="card">
           <h3 className="card-title">Fare vs Distance Distribution</h3>
-          <div className="chart-container">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                data={fareDistributionData}
-                margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis 
-                  dataKey="id" 
-                  angle={-45}
-                  textAnchor="end"
-                  height={60}
-                  tick={{ fontSize: 12 }}
-                  tickFormatter={(value) => `Trip ${value}`}
-                />
-                <YAxis 
-                  yAxisId="fare"
-                  tick={{ fontSize: 12 }}
-                  tickFormatter={(value) => `$${value}`}
-                />
-                <YAxis 
-                  yAxisId="distance"
-                  orientation="right"
-                  tick={{ fontSize: 12 }}
-                  tickFormatter={(value) => `${value} mi`}
-                />
-                <Tooltip 
-                  formatter={(value, name) => {
-                    if (name === 'fare') {
-                      return [`$${value}`, 'Fare'];
-                    } else {
-                      return [`${value} mi`, 'Distance'];
-                    }
-                  }}
-                />
-                <Legend />
-                <Bar yAxisId="fare" dataKey="fare" name="Fare ($)" fill="#8884d8" />
-                <Bar yAxisId="distance" dataKey="distance" name="Distance (mi)" fill="#82ca9d" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
+          <FullScreenChart title="Fare vs Distance Distribution">
+            <div className="chart-container">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={fareDistributionData}
+                  margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis 
+                    dataKey="id" 
+                    angle={-45}
+                    textAnchor="end"
+                    height={60}
+                    tick={{ fontSize: 12 }}
+                    tickFormatter={(value) => `Trip ${value}`}
+                  />
+                  <YAxis 
+                    yAxisId="fare"
+                    tick={{ fontSize: 12 }}
+                    tickFormatter={(value) => `$${value}`}
+                  />
+                  <YAxis 
+                    yAxisId="distance"
+                    orientation="right"
+                    tick={{ fontSize: 12 }}
+                    tickFormatter={(value) => `${value} mi`}
+                  />
+                  <Tooltip 
+                    formatter={(value, name) => {
+                      if (name === 'fare') {
+                        return [`$${parseFloat(value).toFixed(2)}`, 'Fare'];
+                      } else {
+                        return [`${parseFloat(value).toFixed(1)} mi`, 'Distance'];
+                      }
+                    }}
+                  />
+                  <Legend />
+                  <Bar 
+                    yAxisId="fare" 
+                    dataKey="fare" 
+                    name="Fare ($)" 
+                    fill="#8884d8" 
+                    activeBar={{ fill: '#5555ff' }}
+                  />
+                  <Bar 
+                    yAxisId="distance" 
+                    dataKey="distance" 
+                    name="Distance (mi)" 
+                    fill="#82ca9d" 
+                    activeBar={{ fill: '#55ff55' }}
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </FullScreenChart>
         </div>
       </div>
       

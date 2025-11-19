@@ -1,19 +1,18 @@
 import React from 'react';
 import './Header.css';
 
-const Header = () => {
+const Header = ({ sidebarCollapsed, setSidebarCollapsed }) => {
+  const toggleSidebar = () => {
+    setSidebarCollapsed(!sidebarCollapsed);
+  };
+
   return (
     <header className="header">
       <div className="header-content">
-        <h1>Urban Mobility Analytics</h1>
-        <nav>
-          <ul>
-            <li><a href="/">Dashboard</a></li>
-            <li><a href="/analytics">Analytics</a></li>
-            <li><a href="/maps">Maps</a></li>
-            <li><a href="/predictive">Predictive</a></li>
-          </ul>
-        </nav>
+        <button className="menu-toggle" onClick={toggleSidebar}>
+          {sidebarCollapsed ? '☰' : '✕'}
+        </button>
+        <h1>Urban Mobility & Transportation Analytics</h1>
       </div>
     </header>
   );

@@ -4,6 +4,7 @@ from sklearn.ensemble import RandomForestRegressor, IsolationForest
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
 from typing import Dict, Tuple
 import sys
 import os
@@ -20,7 +21,11 @@ class PredictiveModels:
         self.db_manager = DatabaseManager()
         self.trip_demand_model = None
         self.fraud_detection_model = None
+        self.surge_pricing_model = None
+        self.churn_prediction_model = None
         self.scaler = StandardScaler()
+        self.surge_scaler = StandardScaler()
+        self.churn_scaler = StandardScaler()
     
     def connect_to_database(self) -> bool:
         """Connect to the database"""
@@ -172,6 +177,145 @@ class PredictiveModels:
         # Detect anomalies
         predictions = self.fraud_detection_model.predict(features_scaled)
         return predictions
+    
+    def prepare_surge_pricing_features(self) -> pd.DataFrame:
+        """Prepare features for surge pricing prediction"""
+        query = """
+            SELECT 
+                location_id,
+                EXTRACT(HOUR FROM pickup_datetime) as hour,
+                EXTRACT(DOW FROM pickup_datetime) as day_of_week,
+                is_weekend,
+                is_holiday,
+                temperature,
+                precipitation,
+                demand_supply_ratio,
+                avg_fare_multiplier
+            FROM surge_pricing_features
+            WHERE avg_fare_multiplier IS NOT NULL
+        """
+        return self.db_manager.execute_query(query)
+    
+    def train_surge_pricing_model(self) -> Dict:
+        """Train surge pricing prediction model"""
+        try:
+            # Get features
+            df = self.prepare_surge_pricing_features()
+            
+            if df.empty:
+                return {"status": "failed", "message": "No data available for training"}
+            
+            # Prepare features and target
+            feature_cols = ['location_id', 'hour', 'day_of_week', 'is_weekend', 
+                          'is_holiday', 'temperature', 'precipitation', 'demand_supply_ratio']
+            X = df[feature_cols]
+            y = df['avg_fare_multiplier']
+            
+            # Split data
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+            
+            # Scale features
+            X_train_scaled = self.surge_scaler.fit_transform(X_train)
+            X_test_scaled = self.surge_scaler.transform(X_test)
+            
+            # Train model
+            self.surge_pricing_model = RandomForestRegressor(n_estimators=100, random_state=42)
+            self.surge_pricing_model.fit(X_train_scaled, y_train)
+            
+            # Evaluate model
+            y_pred = self.surge_pricing_model.predict(X_test_scaled)
+            mse = mean_squared_error(y_test, y_pred)
+            mae = mean_absolute_error(y_test, y_pred)
+            
+            return {
+                "status": "success",
+                "mse": mse,
+                "mae": mae,
+                "model_score": self.surge_pricing_model.score(X_test_scaled, y_test)
+            }
+        except Exception as e:
+            return {"status": "failed", "message": str(e)}
+    
+    def predict_surge_pricing(self, features: pd.DataFrame) -> np.ndarray:
+        """Predict surge pricing multiplier for given features"""
+        if self.surge_pricing_model is None:
+            raise ValueError("Model not trained yet. Call train_surge_pricing_model() first.")
+        
+        # Scale features
+        features_scaled = self.surge_scaler.transform(features)
+        
+        # Make predictions
+        predictions = self.surge_pricing_model.predict(features_scaled)
+        return predictions
+    
+    def prepare_churn_features(self) -> pd.DataFrame:
+        """Prepare features for customer churn prediction"""
+        query = """
+            SELECT 
+                user_id,
+                days_since_last_trip,
+                trips_last_30_days,
+                avg_trip_cost,
+                total_spent,
+                support_tickets,
+                promo_usage,
+                churned
+            FROM customer_churn_features
+            WHERE churned IS NOT NULL
+        """
+        return self.db_manager.execute_query(query)
+    
+    def train_churn_prediction_model(self) -> Dict:
+        """Train customer churn prediction model"""
+        try:
+            # Get features
+            df = self.prepare_churn_features()
+            
+            if df.empty:
+                return {"status": "failed", "message": "No data available for training"}
+            
+            # Prepare features and target
+            feature_cols = ['days_since_last_trip', 'trips_last_30_days', 'avg_trip_cost',
+                          'total_spent', 'support_tickets', 'promo_usage']
+            X = df[feature_cols]
+            y = df['churned']
+            
+            # Split data
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+            
+            # Scale features
+            X_train_scaled = self.churn_scaler.fit_transform(X_train)
+            X_test_scaled = self.churn_scaler.transform(X_test)
+            
+            # Train model
+            self.churn_prediction_model = RandomForestRegressor(n_estimators=100, random_state=42)
+            self.churn_prediction_model.fit(X_train_scaled, y_train)
+            
+            # Evaluate model
+            y_pred = self.churn_prediction_model.predict(X_test_scaled)
+            mse = mean_squared_error(y_test, y_pred)
+            mae = mean_absolute_error(y_test, y_pred)
+            
+            return {
+                "status": "success",
+                "mse": mse,
+                "mae": mae,
+                "model_score": self.churn_prediction_model.score(X_test_scaled, y_test)
+            }
+        except Exception as e:
+            return {"status": "failed", "message": str(e)}
+    
+    def predict_churn(self, features: pd.DataFrame) -> np.ndarray:
+        """Predict customer churn probability for given features"""
+        if self.churn_prediction_model is None:
+            raise ValueError("Model not trained yet. Call train_churn_prediction_model() first.")
+        
+        # Scale features
+        features_scaled = self.churn_scaler.transform(features)
+        
+        # Make predictions
+        predictions = self.churn_prediction_model.predict(features_scaled)
+        return predictions
 
 # Example usage
 if __name__ == "__main__":
@@ -189,6 +333,16 @@ if __name__ == "__main__":
         # Train fraud detection model
         print("\nTraining fraud detection model...")
         result = ml_models.train_fraud_detection_model()
+        print(f"Training result: {result}")
+        
+        # Train surge pricing model
+        print("\nTraining surge pricing model...")
+        result = ml_models.train_surge_pricing_model()
+        print(f"Training result: {result}")
+        
+        # Train churn prediction model
+        print("\nTraining churn prediction model...")
+        result = ml_models.train_churn_prediction_model()
         print(f"Training result: {result}")
         
         ml_models.close_database()

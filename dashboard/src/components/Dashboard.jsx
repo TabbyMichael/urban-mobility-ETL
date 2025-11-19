@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, AreaChart, Area } from 'recharts';
+import FullScreenChart from './FullScreenChart';
 
 const Dashboard = ({ data }) => {
   // Function to format large numbers
@@ -98,114 +99,148 @@ const Dashboard = ({ data }) => {
         {/* Trip Volume by Hour */}
         <div className="card">
           <h3 className="card-title">Trip Volume by Hour</h3>
-          <div className="chart-container">
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart
-                data={dashboardData.tripStats}
-                margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="hour" />
-                <YAxis tickFormatter={formatNumber} />
-                <Tooltip formatter={(value) => [formatNumber(value), 'Trips']} />
-                <Area type="monotone" dataKey="trips" stroke="#8884d8" fill="#8884d8" fillOpacity={0.3} />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
+          <FullScreenChart title="Trip Volume by Hour">
+            <div className="chart-container">
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart
+                  data={dashboardData.tripStats}
+                  margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="hour" />
+                  <YAxis tickFormatter={formatNumber} />
+                  <Tooltip formatter={(value) => [formatNumber(value), 'Trips']} />
+                  <Area 
+                    type="monotone" 
+                    dataKey="trips" 
+                    stroke="#8884d8" 
+                    fill="#8884d8" 
+                    fillOpacity={0.3} 
+                    name="Trips"
+                    activeDot={{ r: 6 }}
+                  />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
+          </FullScreenChart>
         </div>
         
         {/* Payment Types Distribution */}
         <div className="card">
           <h3 className="card-title">Payment Types</h3>
-          <div className="chart-container">
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie
-                  data={dashboardData.paymentTypes}
-                  cx="50%"
-                  cy="50%"
-                  labelLine={false}
-                  outerRadius={80}
-                  fill="#8884d8"
-                  dataKey="value"
-                  nameKey="name"
-                  label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-                >
-                  {dashboardData.paymentTypes.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={paymentColors[index % paymentColors.length]} />
-                  ))}
-                </Pie>
-                <Tooltip formatter={(value) => [`${value}%`, 'Percentage']} />
-                <Legend />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
+          <FullScreenChart title="Payment Types Distribution">
+            <div className="chart-container">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie
+                    data={dashboardData.paymentTypes}
+                    cx="50%"
+                    cy="50%"
+                    labelLine={false}
+                    outerRadius={80}
+                    fill="#8884d8"
+                    dataKey="value"
+                    nameKey="name"
+                    label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                  >
+                    {dashboardData.paymentTypes.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={paymentColors[index % paymentColors.length]} />
+                    ))}
+                  </Pie>
+                  <Tooltip formatter={(value) => [`${value}%`, 'Percentage']} />
+                  <Legend />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+          </FullScreenChart>
         </div>
       </div>
       
       {/* Zone Performance */}
       <div className="card">
         <h3 className="card-title">Zone Performance</h3>
-        <div className="chart-container">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={dashboardData.zonePerformance}
-              margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis 
-                dataKey="zone" 
-                angle={-45}
-                textAnchor="end"
-                height={60}
-              />
-              <YAxis yAxisId="trips" tickFormatter={formatNumber} />
-              <YAxis yAxisId="revenue" orientation="right" tickFormatter={(value) => `$${formatNumber(value)}`} />
-              <Tooltip 
-                formatter={(value, name) => {
-                  if (name === 'trips') {
-                    return [formatNumber(value), 'Trips'];
-                  } else {
-                    return [`$${formatNumber(value)}`, 'Revenue'];
-                  }
-                }}
-              />
-              <Legend />
-              <Bar yAxisId="trips" dataKey="trips" name="Trips" fill="#8884d8" />
-              <Bar yAxisId="revenue" dataKey="revenue" name="Revenue" fill="#82ca9d" />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
+        <FullScreenChart title="Zone Performance">
+          <div className="chart-container">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={dashboardData.zonePerformance}
+                margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis 
+                  dataKey="zone" 
+                  angle={-45}
+                  textAnchor="end"
+                  height={60}
+                />
+                <YAxis yAxisId="trips" tickFormatter={formatNumber} />
+                <YAxis yAxisId="revenue" orientation="right" tickFormatter={(value) => `$${formatNumber(value)}`} />
+                <Tooltip 
+                  formatter={(value, name) => {
+                    if (name === 'trips') {
+                      return [formatNumber(value), 'Trips'];
+                    } else {
+                      return [`$${formatNumber(value)}`, 'Revenue'];
+                    }
+                  }}
+                />
+                <Legend />
+                <Bar yAxisId="trips" dataKey="trips" name="Trips" fill="#8884d8" />
+                <Bar yAxisId="revenue" dataKey="revenue" name="Revenue" fill="#82ca9d" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </FullScreenChart>
       </div>
       
       {/* Weekly Trend */}
       <div className="card">
         <h3 className="card-title">Weekly Trend</h3>
-        <div className="chart-container">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart
-              data={dashboardData.trendData}
-              margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="day" />
-              <YAxis yAxisId="trips" tickFormatter={formatNumber} />
-              <YAxis yAxisId="revenue" orientation="right" tickFormatter={(value) => `$${formatNumber(value)}`} />
-              <Tooltip 
-                formatter={(value, name) => {
-                  if (name === 'trips') {
-                    return [formatNumber(value), 'Trips'];
-                  } else {
-                    return [`$${formatNumber(value)}`, 'Revenue'];
-                  }
-                }}
-              />
-              <Legend />
-              <Line yAxisId="trips" type="monotone" dataKey="trips" name="Trips" stroke="#8884d8" strokeWidth={2} />
-              <Line yAxisId="revenue" type="monotone" dataKey="revenue" name="Revenue" stroke="#82ca9d" strokeWidth={2} />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
+        <FullScreenChart title="Weekly Trend">
+          <div className="chart-container">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart
+                data={dashboardData.trendData}
+                margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="day" />
+                <YAxis yAxisId="trips" tickFormatter={formatNumber} />
+                <YAxis yAxisId="revenue" orientation="right" tickFormatter={(value) => `$${formatNumber(value)}`} />
+                <Tooltip 
+                  formatter={(value, name) => {
+                    if (name === 'trips') {
+                      return [formatNumber(value), 'Trips'];
+                    } else {
+                      return [`$${formatNumber(value)}`, 'Revenue'];
+                    }
+                  }}
+                />
+                <Legend />
+                <Line 
+                  yAxisId="trips" 
+                  type="monotone" 
+                  dataKey="trips" 
+                  name="Trips" 
+                  stroke="#8884d8" 
+                  strokeWidth={2} 
+                  dot={{ r: 4 }}
+                  activeDot={{ r: 6 }}
+                />
+                <Line 
+                  yAxisId="revenue" 
+                  type="monotone" 
+                  dataKey="revenue" 
+                  name="Revenue" 
+                  stroke="#82ca9d" 
+                  strokeWidth={2} 
+                  dot={{ r: 4 }}
+                  activeDot={{ r: 6 }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </FullScreenChart>
       </div>
     </div>
   );

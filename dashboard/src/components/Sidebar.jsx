@@ -2,16 +2,17 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Sidebar.css';
 
-const Sidebar = ({ collapsed = false, onToggle = () => {} }) => {
+const Sidebar = ({ sidebarCollapsed, setSidebarCollapsed }) => {
   const location = useLocation();
 
+  const toggleSidebar = () => {
+    setSidebarCollapsed(!sidebarCollapsed);
+  };
+
   return (
-    <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
-      <div className="sidebar-top">
-        <button className="toggle-btn" onClick={onToggle} aria-label="Toggle sidebar">
-          {collapsed ? '➡️' : '⬅️'}
-        </button>
-        {!collapsed && <div className="brand">Urban Mobility</div>}
+    <div className={`sidebar ${sidebarCollapsed ? 'collapsed' : ''}`}>
+      <div className="sidebar-toggle" onClick={toggleSidebar}>
+        {sidebarCollapsed ? '»' : '«'}
       </div>
       <nav className="sidebar-nav">
         <ul>
@@ -21,7 +22,7 @@ const Sidebar = ({ collapsed = false, onToggle = () => {} }) => {
               className={location.pathname === '/' ? 'active' : ''}
             >
               <span className="icon">📊</span>
-              <span className="text">Dashboard</span>
+              {!sidebarCollapsed && <span className="text">Dashboard</span>}
             </Link>
           </li>
           <li>
@@ -30,7 +31,7 @@ const Sidebar = ({ collapsed = false, onToggle = () => {} }) => {
               className={location.pathname === '/analytics' ? 'active' : ''}
             >
               <span className="icon">📈</span>
-              <span className="text">Analytics</span>
+              {!sidebarCollapsed && <span className="text">Analytics</span>}
             </Link>
           </li>
           <li>
@@ -39,7 +40,7 @@ const Sidebar = ({ collapsed = false, onToggle = () => {} }) => {
               className={location.pathname === '/maps' ? 'active' : ''}
             >
               <span className="icon">🗺️</span>
-              <span className="text">Maps</span>
+              {!sidebarCollapsed && <span className="text">Maps</span>}
             </Link>
           </li>
           <li>
@@ -48,7 +49,7 @@ const Sidebar = ({ collapsed = false, onToggle = () => {} }) => {
               className={location.pathname === '/realtime' ? 'active' : ''}
             >
               <span className="icon">⚡</span>
-              <span className="text">Real-time</span>
+              {!sidebarCollapsed && <span className="text">Real-time</span>}
             </Link>
           </li>
           <li>
@@ -57,7 +58,7 @@ const Sidebar = ({ collapsed = false, onToggle = () => {} }) => {
               className={location.pathname === '/predictive' ? 'active' : ''}
             >
               <span className="icon">🔮</span>
-              <span className="text">Predictive</span>
+              {!sidebarCollapsed && <span className="text">Predictive</span>}
             </Link>
           </li>
         </ul>
