@@ -6,13 +6,14 @@ import Analytics from './components/Analytics';
 import Maps from './components/Maps';
 import Predictive from './components/Predictive';
 import RealTime from './components/RealTime';
+import Header from './components/Header';
 import './App.css';
 import './components/AppLayout.css';
 
 function App() {
   const [isBackendHealthy, setIsBackendHealthy] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   useEffect(() => {
     // Check backend health
@@ -47,13 +48,17 @@ function App() {
 
   return (
     <Router>
-      <div className={`app ${isSidebarCollapsed ? 'sidebar-collapsed' : ''}`}>
+      <div className="app">
         <div className="main-container">
           <Sidebar 
-            collapsed={isSidebarCollapsed} 
-            onToggle={() => setIsSidebarCollapsed(prev => !prev)} 
+            sidebarCollapsed={sidebarCollapsed} 
+            setSidebarCollapsed={setSidebarCollapsed} 
           />
-          <div className="content">
+          <div className={`content ${sidebarCollapsed ? 'collapsed' : ''}`}>
+            <Header 
+              sidebarCollapsed={sidebarCollapsed} 
+              setSidebarCollapsed={setSidebarCollapsed} 
+            />
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/analytics" element={<Analytics />} />

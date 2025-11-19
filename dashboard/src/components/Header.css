@@ -3,38 +3,48 @@
   color: white;
   padding: 1rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .header-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
-.header h1 {
+.header-content h1 {
   margin: 0;
   font-size: 1.5rem;
+  flex-grow: 1;
+  text-align: center;
 }
 
-.header nav ul {
-  display: flex;
-  list-style: none;
-}
-
-.header nav ul li {
-  margin-left: 1rem;
-}
-
-.header nav ul li a {
+.menu-toggle {
+  background: none;
+  border: none;
   color: white;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.header nav ul li a:hover {
+.menu-toggle:hover {
   background-color: #34495e;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 1.2rem;
+  }
+  
+  .menu-toggle {
+    font-size: 1.2rem;
+    padding: 0.4rem;
+  }
 }

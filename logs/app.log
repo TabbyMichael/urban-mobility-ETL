@@ -391,3 +391,232 @@
 2025-11-10 12:28:58,680 INFO src.data.database Successfully connected to PostgreSQL database
 2025-11-10 12:30:30,746 INFO src.data.database Successfully connected to PostgreSQL database
 2025-11-10 12:31:49,546 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-10 13:07:30,236 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-10 13:09:31,452 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-10 13:09:31,594 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.120:5000
+2025-11-10 13:09:31,594 INFO werkzeug [33mPress CTRL+C to quit[0m
+2025-11-10 13:09:36,567 INFO src.config.logging Root endpoint accessed
+2025-11-10 13:09:36,568 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 13:09:36] "GET / HTTP/1.1" 200 -
+2025-11-10 13:09:36,596 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 13:09:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-10 13:10:22,464 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 13:10:22] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 13:10:22,497 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 13:10:22] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 13:10:23,737 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 13:10:23] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 13:10:23,754 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 13:10:23] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 13:16:40,674 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 13:16:40] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 13:16:40,675 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 13:16:40] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 22:06:54,240 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 22:06:54] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 22:06:54,235 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 22:06:54] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-10 22:07:13,781 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 22:07:13] "GET /socket.io/?EIO=4&transport=polling&t=iktolcj2 HTTP/1.1" 200 -
+2025-11-10 22:07:13,784 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 22:07:13] "GET /socket.io/?EIO=4&transport=polling&t=iktmq7fs HTTP/1.1" 200 -
+2025-11-10 22:07:13,983 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 22:07:13] "GET /socket.io/?EIO=4&transport=polling&t=ikttwche&sid=mvwHARArm02z36HdAAAA HTTP/1.1" 200 -
+2025-11-10 22:07:13,988 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 22:07:13] "POST /socket.io/?EIO=4&transport=polling&t=iktttwv2&sid=mvwHARArm02z36HdAAAA HTTP/1.1" 200 -
+2025-11-10 22:07:14,024 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 22:07:14] "GET /socket.io/?EIO=4&transport=polling&t=iktzqb41&sid=mvwHARArm02z36HdAAAA HTTP/1.1" 200 -
+2025-11-10 22:07:14,050 INFO werkzeug 127.0.0.1 - - [10/Nov/2025 22:07:14] "GET /socket.io/?EIO=4&transport=polling&t=iku0m4t5&sid=mvwHARArm02z36HdAAAA HTTP/1.1" 200 -
+2025-11-19 15:06:05,429 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:06:05,718 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.137:5000
+2025-11-19 15:06:05,719 INFO werkzeug [33mPress CTRL+C to quit[0m
+2025-11-19 15:06:21,819 INFO src.config.logging Root endpoint accessed
+2025-11-19 15:06:21,822 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:06:21] "GET / HTTP/1.1" 200 -
+2025-11-19 15:06:22,676 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:06:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-19 15:06:32,279 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:06:32] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-19 15:06:32,414 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:06:32] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-19 15:06:32,715 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:06:32] "GET /api/v1/dashboard/data HTTP/1.1" 200 -
+2025-11-19 15:08:03,152 INFO src.config.logging Root endpoint accessed
+2025-11-19 15:08:03,154 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:08:03] "GET / HTTP/1.1" 200 -
+2025-11-19 15:08:03,317 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:08:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-19 15:08:09,172 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:08:09] "[33mGET /docs HTTP/1.1[0m" 404 -
+2025-11-19 15:08:09,297 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:08:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-19 15:08:16,078 INFO src.config.logging Root endpoint accessed
+2025-11-19 15:08:16,081 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:08:16] "GET / HTTP/1.1" 200 -
+2025-11-19 15:08:16,184 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:08:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-19 15:08:45,266 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:08:45] "GET /socket.io/?EIO=4&transport=polling&t=ylbyeueg HTTP/1.1" 200 -
+2025-11-19 15:08:45,268 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:08:45] "GET /socket.io/?EIO=4&transport=polling&t=ylbyhmfe HTTP/1.1" 200 -
+2025-11-19 15:08:45,358 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:08:45] "POST /socket.io/?EIO=4&transport=polling&t=ylc0vy97&sid=5ilVIC_FvugFDMl4AAAB HTTP/1.1" 200 -
+2025-11-19 15:08:45,363 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:08:45] "GET /socket.io/?EIO=4&transport=polling&t=ylc0yl9v&sid=5ilVIC_FvugFDMl4AAAB HTTP/1.1" 200 -
+2025-11-19 15:08:45,389 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:08:45] "GET /socket.io/?EIO=4&transport=polling&t=ylc1uz12&sid=5ilVIC_FvugFDMl4AAAB HTTP/1.1" 200 -
+2025-11-19 15:08:45,405 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:08:45] "POST /socket.io/?EIO=4&transport=polling&t=ylc1yrrx&sid=5ilVIC_FvugFDMl4AAAB HTTP/1.1" 200 -
+2025-11-19 15:08:45,423 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:08:45] "GET /socket.io/?EIO=4&transport=polling&t=ylc2u2tg&sid=5ilVIC_FvugFDMl4AAAB HTTP/1.1" 200 -
+2025-11-19 15:08:45,441 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:08:45] "GET /socket.io/?EIO=4&transport=polling&t=ylc3chsy&sid=5ilVIC_FvugFDMl4AAAB HTTP/1.1" 200 -
+2025-11-19 15:08:51,400 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:08:51] "GET /socket.io/?EIO=4&transport=websocket&sid=5ilVIC_FvugFDMl4AAAB HTTP/1.1" 200 -
+2025-11-19 15:10:56,339 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:56,461 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:56,548 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:56,620 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:56,688 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:56,753 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:56,808 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:56,862 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:56,956 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:57,022 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:57,087 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:57,146 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:57,207 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:57,326 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:57,389 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:57,444 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:57,496 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:57,550 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:57,647 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:57,700 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:57,774 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:57,831 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:57,887 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:57,993 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:58,044 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:58,099 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:58,153 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:58,208 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:58,286 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:10:58,606 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:18,397 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:18,445 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:18,496 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:18,850 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:18,916 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:18,973 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:19,203 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:19,254 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:19,306 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:21,736 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:21,793 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:21,849 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:21,904 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:21,959 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:22,044 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:22,109 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:22,166 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:22,235 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:22,303 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:22,416 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:22,477 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:22,532 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:22,616 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:22,670 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:22,771 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:22,828 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:22,901 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:22,956 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:23,019 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:23,155 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:23,209 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:23,276 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:23,343 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:23,402 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:23,576 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:23,651 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:23,733 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:23,809 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:23,876 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:24,002 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:24,095 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:24,167 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:24,314 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:24,420 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:24,478 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:24,533 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:11:24,601 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:12:42,900 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:12:43,096 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.137:5000
+2025-11-19 15:12:43,097 INFO werkzeug [33mPress CTRL+C to quit[0m
+2025-11-19 15:12:48,894 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:12:48] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-19 15:12:48,998 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:12:48] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-19 15:12:49,059 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:12:49] "GET /api/v1/dashboard/data HTTP/1.1" 200 -
+2025-11-19 15:13:08,831 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:13:08] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-19 15:13:08,931 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:13:08] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-19 15:18:49,952 INFO src.data.database Successfully connected to PostgreSQL database
+2025-11-19 15:18:50,173 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.137:5000
+2025-11-19 15:18:50,174 INFO werkzeug [33mPress CTRL+C to quit[0m
+2025-11-19 15:19:04,188 INFO src.config.logging Root endpoint accessed
+2025-11-19 15:19:04,191 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:04] "GET / HTTP/1.1" 200 -
+2025-11-19 15:19:04,277 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-19 15:19:27,307 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:27] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-19 15:19:27,414 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:27] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-19 15:19:31,376 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:31] "GET /socket.io/?EIO=4&transport=polling&t=yz6hre34 HTTP/1.1" 200 -
+2025-11-19 15:19:31,383 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:31] "GET /socket.io/?EIO=4&transport=polling&t=yz6hvejh HTTP/1.1" 200 -
+2025-11-19 15:19:31,589 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:31] "POST /socket.io/?EIO=4&transport=polling&t=yz6milce&sid=pturGhY3d8PCsxQJAAAB HTTP/1.1" 200 -
+2025-11-19 15:19:31,593 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:31] "GET /socket.io/?EIO=4&transport=polling&t=yz6ml6cc&sid=pturGhY3d8PCsxQJAAAB HTTP/1.1" 200 -
+2025-11-19 15:19:31,632 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:31] "GET /socket.io/?EIO=4&transport=polling&t=yz6on0g1&sid=pturGhY3d8PCsxQJAAAB HTTP/1.1" 200 -
+2025-11-19 15:19:31,640 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:31] "POST /socket.io/?EIO=4&transport=polling&t=yz6oqdkr&sid=pturGhY3d8PCsxQJAAAB HTTP/1.1" 200 -
+2025-11-19 15:19:31,668 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:31] "GET /socket.io/?EIO=4&transport=polling&t=yz6q3mev&sid=pturGhY3d8PCsxQJAAAB HTTP/1.1" 200 -
+2025-11-19 15:19:34,146 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:34] "GET /socket.io/?EIO=4&transport=websocket&sid=pturGhY3d8PCsxQJAAAB HTTP/1.1" 200 -
+2025-11-19 15:19:50,736 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:50] "GET /socket.io/?EIO=4&transport=polling&t=yzlfoe9l HTTP/1.1" 200 -
+2025-11-19 15:19:50,743 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:50] "GET /socket.io/?EIO=4&transport=polling&t=yzlftyxy HTTP/1.1" 200 -
+2025-11-19 15:19:50,877 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:50] "POST /socket.io/?EIO=4&transport=polling&t=yzljno69&sid=8ppDWpE3zrrOVKCrAAAE HTTP/1.1" 200 -
+2025-11-19 15:19:50,880 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:50] "GET /socket.io/?EIO=4&transport=polling&t=yzljqtpp&sid=8ppDWpE3zrrOVKCrAAAE HTTP/1.1" 200 -
+2025-11-19 15:19:50,905 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:50] "GET /socket.io/?EIO=4&transport=polling&t=yzlkf586&sid=8ppDWpE3zrrOVKCrAAAE HTTP/1.1" 200 -
+2025-11-19 15:19:50,914 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:50] "POST /socket.io/?EIO=4&transport=polling&t=yzlkj600&sid=8ppDWpE3zrrOVKCrAAAE HTTP/1.1" 200 -
+2025-11-19 15:19:50,945 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:19:50] "GET /socket.io/?EIO=4&transport=polling&t=yzlllxvq&sid=8ppDWpE3zrrOVKCrAAAE HTTP/1.1" 200 -
+2025-11-19 15:20:00,238 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:20:00] "GET /socket.io/?EIO=4&transport=websocket&sid=8ppDWpE3zrrOVKCrAAAE HTTP/1.1" 200 -
+2025-11-19 15:20:32,334 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:20:32] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-19 15:20:32,412 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:20:32] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-19 15:25:52,718 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:25:52] "GET /socket.io/?EIO=4&transport=polling&t=z7cquehp HTTP/1.1" 200 -
+2025-11-19 15:25:52,723 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:25:52] "GET /socket.io/?EIO=4&transport=polling&t=z7cqxcaf HTTP/1.1" 200 -
+2025-11-19 15:25:52,804 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:25:52] "POST /socket.io/?EIO=4&transport=polling&t=z7ct60hg&sid=hFWrMqq0IY_aCHBbAAAH HTTP/1.1" 200 -
+2025-11-19 15:25:52,810 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:25:52] "GET /socket.io/?EIO=4&transport=polling&t=z7ct8zkh&sid=hFWrMqq0IY_aCHBbAAAH HTTP/1.1" 200 -
+2025-11-19 15:25:52,829 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:25:52] "GET /socket.io/?EIO=4&transport=polling&t=z7ctx981&sid=hFWrMqq0IY_aCHBbAAAH HTTP/1.1" 200 -
+2025-11-19 15:25:52,838 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:25:52] "POST /socket.io/?EIO=4&transport=polling&t=z7cu0zxl&sid=hFWrMqq0IY_aCHBbAAAH HTTP/1.1" 200 -
+2025-11-19 15:25:52,857 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:25:52] "GET /socket.io/?EIO=4&transport=polling&t=z7cuq4bv&sid=hFWrMqq0IY_aCHBbAAAH HTTP/1.1" 200 -
+2025-11-19 15:25:54,233 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:25:54] "GET /socket.io/?EIO=4&transport=websocket&sid=hFWrMqq0IY_aCHBbAAAH HTTP/1.1" 200 -
+2025-11-19 15:27:02,264 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:27:02] "GET /socket.io/?EIO=4&transport=polling&t=z8uec5ga HTTP/1.1" 200 -
+2025-11-19 15:27:02,278 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:27:02] "GET /socket.io/?EIO=4&transport=polling&t=z8ueg30q HTTP/1.1" 200 -
+2025-11-19 15:27:02,439 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:27:02] "POST /socket.io/?EIO=4&transport=polling&t=z8ugtihx&sid=PyPfyoS7NOZCSV6zAAAK HTTP/1.1" 200 -
+2025-11-19 15:27:02,442 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:27:02] "GET /socket.io/?EIO=4&transport=polling&t=z8ugwdvc&sid=PyPfyoS7NOZCSV6zAAAK HTTP/1.1" 200 -
+2025-11-19 15:27:02,481 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:27:02] "GET /socket.io/?EIO=4&transport=polling&t=z8ukc7md&sid=PyPfyoS7NOZCSV6zAAAK HTTP/1.1" 200 -
+2025-11-19 15:27:02,489 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:27:02] "POST /socket.io/?EIO=4&transport=polling&t=z8ukfj62&sid=PyPfyoS7NOZCSV6zAAAK HTTP/1.1" 200 -
+2025-11-19 15:27:02,539 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:27:02] "GET /socket.io/?EIO=4&transport=polling&t=z8ulx494&sid=PyPfyoS7NOZCSV6zAAAK HTTP/1.1" 200 -
+2025-11-19 15:27:05,978 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 15:27:05] "GET /socket.io/?EIO=4&transport=websocket&sid=PyPfyoS7NOZCSV6zAAAK HTTP/1.1" 200 -
+2025-11-19 16:52:52,606 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:52] "GET /socket.io/?EIO=4&transport=polling&t=2b8fqecd HTTP/1.1" 200 -
+2025-11-19 16:52:52,613 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:52] "GET /socket.io/?EIO=4&transport=polling&t=2b8fvnf4 HTTP/1.1" 200 -
+2025-11-19 16:52:52,771 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:52] "POST /socket.io/?EIO=4&transport=polling&t=2b8kbvlc&sid=DHMtZb6ST7h07FDSAAAN HTTP/1.1" 200 -
+2025-11-19 16:52:52,775 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:52] "GET /socket.io/?EIO=4&transport=polling&t=2b8ke0zb&sid=DHMtZb6ST7h07FDSAAAN HTTP/1.1" 200 -
+2025-11-19 16:52:52,804 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:52] "GET /socket.io/?EIO=4&transport=polling&t=2b8l6twp&sid=DHMtZb6ST7h07FDSAAAN HTTP/1.1" 200 -
+2025-11-19 16:52:52,821 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:52] "POST /socket.io/?EIO=4&transport=polling&t=2b8l92r8&sid=DHMtZb6ST7h07FDSAAAN HTTP/1.1" 200 -
+2025-11-19 16:52:52,869 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:52] "GET /socket.io/?EIO=4&transport=polling&t=2b8n2qhg&sid=DHMtZb6ST7h07FDSAAAN HTTP/1.1" 200 -
+2025-11-19 16:52:57,524 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:57] "GET /socket.io/?EIO=4&transport=websocket&sid=DHMtZb6ST7h07FDSAAAN HTTP/1.1" 200 -
+2025-11-19 16:52:58,498 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:58] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-19 16:52:58,597 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:58] "GET /socket.io/?EIO=4&transport=polling&t=2bd25uji HTTP/1.1" 200 -
+2025-11-19 16:52:58,609 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:58] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-19 16:52:58,623 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:58] "GET /socket.io/?EIO=4&transport=polling&t=2bd29uxm HTTP/1.1" 200 -
+2025-11-19 16:52:58,926 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:58] "POST /socket.io/?EIO=4&transport=polling&t=2bdathgk&sid=fJWBgO4Za_WnCBPXAAAQ HTTP/1.1" 200 -
+2025-11-19 16:52:58,930 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:58] "GET /socket.io/?EIO=4&transport=polling&t=2bdavuvg&sid=fJWBgO4Za_WnCBPXAAAQ HTTP/1.1" 200 -
+2025-11-19 16:52:58,965 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:58] "GET /socket.io/?EIO=4&transport=polling&t=2bdbv5l7&sid=fJWBgO4Za_WnCBPXAAAQ HTTP/1.1" 200 -
+2025-11-19 16:52:58,970 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:58] "POST /socket.io/?EIO=4&transport=polling&t=2bdby33f&sid=fJWBgO4Za_WnCBPXAAAQ HTTP/1.1" 200 -
+2025-11-19 16:52:59,045 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:52:59] "GET /socket.io/?EIO=4&transport=polling&t=2bde7bhe&sid=fJWBgO4Za_WnCBPXAAAQ HTTP/1.1" 200 -
+2025-11-19 16:53:01,063 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:53:01] "GET /socket.io/?EIO=4&transport=websocket&sid=fJWBgO4Za_WnCBPXAAAQ HTTP/1.1" 200 -
+2025-11-19 16:53:08,468 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:53:08] "GET /socket.io/?EIO=4&transport=polling&t=2bkob1n0 HTTP/1.1" 200 -
+2025-11-19 16:53:08,473 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:53:08] "GET /socket.io/?EIO=4&transport=polling&t=2bkofa1u HTTP/1.1" 200 -
+2025-11-19 16:53:08,686 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:53:08] "POST /socket.io/?EIO=4&transport=polling&t=2bkuc90q&sid=X8lFh44Rx3OqC6YMAAAT HTTP/1.1" 200 -
+2025-11-19 16:53:08,689 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:53:08] "GET /socket.io/?EIO=4&transport=polling&t=2bkuf6oe&sid=X8lFh44Rx3OqC6YMAAAT HTTP/1.1" 200 -
+2025-11-19 16:53:08,709 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:53:08] "GET /socket.io/?EIO=4&transport=polling&t=2bkv15dt&sid=X8lFh44Rx3OqC6YMAAAT HTTP/1.1" 200 -
+2025-11-19 16:53:08,718 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:53:08] "POST /socket.io/?EIO=4&transport=polling&t=2bkv4jdk&sid=X8lFh44Rx3OqC6YMAAAT HTTP/1.1" 200 -
+2025-11-19 16:53:08,776 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:53:08] "GET /socket.io/?EIO=4&transport=polling&t=2bkwxa98&sid=X8lFh44Rx3OqC6YMAAAT HTTP/1.1" 200 -
+2025-11-19 16:54:23,828 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:54:23] "GET /socket.io/?EIO=4&transport=websocket&sid=X8lFh44Rx3OqC6YMAAAT HTTP/1.1" 200 -
+2025-11-19 16:56:30,114 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:30] "GET /socket.io/?EIO=4&transport=polling&t=2fw9mc10 HTTP/1.1" 200 -
+2025-11-19 16:56:30,122 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:30] "GET /socket.io/?EIO=4&transport=polling&t=2fw9qmv0 HTTP/1.1" 200 -
+2025-11-19 16:56:30,278 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:30] "POST /socket.io/?EIO=4&transport=polling&t=2fwe4a8q&sid=X8GeTnvujJWVT4VdAAAW HTTP/1.1" 200 -
+2025-11-19 16:56:30,282 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:30] "GET /socket.io/?EIO=4&transport=polling&t=2fwe6iu8&sid=X8GeTnvujJWVT4VdAAAW HTTP/1.1" 200 -
+2025-11-19 16:56:30,324 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:30] "GET /socket.io/?EIO=4&transport=polling&t=2fwfems9&sid=X8GeTnvujJWVT4VdAAAW HTTP/1.1" 200 -
+2025-11-19 16:56:30,349 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:30] "POST /socket.io/?EIO=4&transport=polling&t=2fwfr2o3&sid=X8GeTnvujJWVT4VdAAAW HTTP/1.1" 200 -
+2025-11-19 16:56:30,402 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:30] "GET /socket.io/?EIO=4&transport=polling&t=2fwhn05i&sid=X8GeTnvujJWVT4VdAAAW HTTP/1.1" 200 -
+2025-11-19 16:56:37,140 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:37] "GET /socket.io/?EIO=4&transport=websocket&sid=X8GeTnvujJWVT4VdAAAW HTTP/1.1" 200 -
+2025-11-19 16:56:37,977 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:37] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-19 16:56:38,056 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:38] "GET /api/v1/health HTTP/1.1" 200 -
+2025-11-19 16:56:38,085 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:38] "GET /socket.io/?EIO=4&transport=polling&t=2g2f0682 HTTP/1.1" 200 -
+2025-11-19 16:56:38,106 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:38] "GET /socket.io/?EIO=4&transport=polling&t=2g2f5upd HTTP/1.1" 200 -
+2025-11-19 16:56:38,537 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:38] "POST /socket.io/?EIO=4&transport=polling&t=2g2mr9wv&sid=gVHa01T0HuNbiukKAAAZ HTTP/1.1" 200 -
+2025-11-19 16:56:38,541 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:38] "GET /socket.io/?EIO=4&transport=polling&t=2g2mu9ce&sid=gVHa01T0HuNbiukKAAAZ HTTP/1.1" 200 -
+2025-11-19 16:56:38,592 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:38] "GET /socket.io/?EIO=4&transport=polling&t=2g2stfuc&sid=gVHa01T0HuNbiukKAAAZ HTTP/1.1" 200 -
+2025-11-19 16:56:38,600 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:38] "POST /socket.io/?EIO=4&transport=polling&t=2g2svtk3&sid=gVHa01T0HuNbiukKAAAZ HTTP/1.1" 200 -
+2025-11-19 16:56:38,697 INFO werkzeug 127.0.0.1 - - [19/Nov/2025 16:56:38] "GET /socket.io/?EIO=4&transport=polling&t=2g2vd7n1&sid=gVHa01T0HuNbiukKAAAZ HTTP/1.1" 200 -

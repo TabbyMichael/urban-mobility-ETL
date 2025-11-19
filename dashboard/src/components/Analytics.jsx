@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ScatterChart, Scatter } from 'recharts';
+import FullScreenChart from './FullScreenChart';
 
 const Analytics = ({ data }) => {
   // Function to format large numbers
@@ -78,176 +79,197 @@ const Analytics = ({ data }) => {
       {/* Trip Distribution */}
       <div className="card">
         <h3 className="card-title">Trip Distribution by Day and Service</h3>
-        <div className="chart-container">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={analyticsData.tripDistribution}
-              margin={{ top: 20, right: 30, left: 20, bottom: 50 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis 
-                dataKey="day" 
-                angle={-45}
-                textAnchor="end"
-                height={60}
-              />
-              <YAxis tickFormatter={formatNumber} />
-              <Tooltip formatter={(value) => [formatNumber(value), 'Trips']} />
-              <Legend />
-              <Bar dataKey="yellow" name="Yellow Taxi" fill="#FFD700" />
-              <Bar dataKey="green" name="Green Taxi" fill="#32CD32" />
-              <Bar dataKey="uber" name="Uber" fill="#000000" />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
+        <FullScreenChart title="Trip Distribution by Day and Service">
+          <div className="chart-container">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={analyticsData.tripDistribution}
+                margin={{ top: 20, right: 30, left: 20, bottom: 50 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis 
+                  dataKey="day" 
+                  angle={-45}
+                  textAnchor="end"
+                  height={60}
+                />
+                <YAxis tickFormatter={formatNumber} />
+                <Tooltip formatter={(value) => [formatNumber(value), 'Trips']} />
+                <Legend />
+                <Bar dataKey="yellow" name="Yellow Taxi" fill="#FFD700" />
+                <Bar dataKey="green" name="Green Taxi" fill="#32CD32" />
+                <Bar dataKey="uber" name="Uber" fill="#000000" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </FullScreenChart>
       </div>
       
       <div className="analytics-grid">
         {/* Fare Analysis */}
         <div className="card">
           <h3 className="card-title">Fare Distribution</h3>
-          <div className="chart-container">
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie
-                  data={analyticsData.fareAnalysis}
-                  cx="50%"
-                  cy="50%"
-                  labelLine={false}
-                  outerRadius={80}
-                  fill="#8884d8"
-                  dataKey="count"
-                  nameKey="range"
-                  label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-                >
-                  {analyticsData.fareAnalysis.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={fareColors[index % fareColors.length]} />
-                  ))}
-                </Pie>
-                <Tooltip formatter={(value) => [formatNumber(value), 'Trips']} />
-                <Legend />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
+          <FullScreenChart title="Fare Distribution">
+            <div className="chart-container">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie
+                    data={analyticsData.fareAnalysis}
+                    cx="50%"
+                    cy="50%"
+                    labelLine={true}
+                    outerRadius={80}
+                    fill="#8884d8"
+                    dataKey="count"
+                    nameKey="range"
+                    label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                    activeIndex={0}
+                  >
+                    {analyticsData.fareAnalysis.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={fareColors[index % fareColors.length]} />
+                    ))}
+                  </Pie>
+                  <Tooltip formatter={(value) => [formatNumber(value), 'Trips']} />
+                  <Legend />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+          </FullScreenChart>
         </div>
         
         {/* Speed Analysis */}
         <div className="card">
           <h3 className="card-title">Average Speed by Hour</h3>
-          <div className="chart-container">
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart
-                data={analyticsData.speedAnalysis}
-                margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="hour" />
-                <YAxis domain={[0, 20]} tickFormatter={(value) => `${value} mph`} />
-                <Tooltip formatter={(value) => [`${value} mph`, 'Speed']} />
-                <Legend />
-                <Line 
-                  type="monotone" 
-                  dataKey="speed" 
-                  name="Average Speed" 
-                  stroke="#8884d8" 
-                  strokeWidth={2}
-                  dot={{ r: 4 }}
-                  activeDot={{ r: 6 }} 
-                />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
+          <FullScreenChart title="Average Speed by Hour">
+            <div className="chart-container">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart
+                  data={analyticsData.speedAnalysis}
+                  margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="hour" />
+                  <YAxis domain={[0, 20]} tickFormatter={(value) => `${value} mph`} />
+                  <Tooltip formatter={(value) => [`${value} mph`, 'Speed']} />
+                  <Legend />
+                  <Line 
+                    type="monotone" 
+                    dataKey="speed" 
+                    name="Average Speed" 
+                    stroke="#8884d8" 
+                    strokeWidth={2}
+                    dot={{ r: 4 }}
+                    activeDot={{ r: 6 }} 
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          </FullScreenChart>
         </div>
       </div>
       
       {/* Passenger Demand Heatmap */}
       <div className="card">
         <h3 className="card-title">Passenger Demand by Location</h3>
-        <div className="chart-container">
-          <ResponsiveContainer width="100%" height="100%">
-            <RadarChart cx="50%" cy="50%" outerRadius="80%" data={analyticsData.passengerDemand}>
-              <PolarGrid />
-              <PolarAngleAxis dataKey="location" />
-              <PolarRadiusAxis angle={30} domain={[0, 100]} />
-              <Radar
-                name="Demand"
-                dataKey="demand"
-                stroke="#8884d8"
-                fill="#8884d8"
-                fillOpacity={0.6}
-              />
-              <Tooltip formatter={(value) => [`${value}%`, 'Demand']} />
-            </RadarChart>
-          </ResponsiveContainer>
-        </div>
+        <FullScreenChart title="Passenger Demand by Location">
+          <div className="chart-container">
+            <ResponsiveContainer width="100%" height="100%">
+              <RadarChart cx="50%" cy="50%" outerRadius="80%" data={analyticsData.passengerDemand}>
+                <PolarGrid />
+                <PolarAngleAxis dataKey="location" />
+                <PolarRadiusAxis angle={30} domain={[0, 100]} />
+                <Radar
+                  name="Demand"
+                  dataKey="demand"
+                  stroke="#8884d8"
+                  fill="#8884d8"
+                  fillOpacity={0.6}
+                  activeDot={{ r: 6 }}
+                />
+                <Tooltip formatter={(value) => [`${value}%`, 'Demand']} />
+                <Legend />
+              </RadarChart>
+            </ResponsiveContainer>
+          </div>
+        </FullScreenChart>
       </div>
       
       <div className="analytics-grid">
         {/* Trip Duration */}
         <div className="card">
           <h3 className="card-title">Trip Duration Distribution</h3>
-          <div className="chart-container">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                data={analyticsData.tripDuration}
-                layout="vertical"
-                margin={{ top: 20, right: 30, left: 60, bottom: 20 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis type="number" domain={[0, 50]} tickFormatter={(value) => `${value}%`} />
-                <YAxis 
-                  dataKey="duration" 
-                  type="category" 
-                  width={80}
-                />
-                <Tooltip formatter={(value) => [`${value}%`, 'Percentage']} />
-                <Legend />
-                <Bar dataKey="percentage" name="Percentage" fill="#82ca9d" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
+          <FullScreenChart title="Trip Duration Distribution">
+            <div className="chart-container">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={analyticsData.tripDuration}
+                  layout="vertical"
+                  margin={{ top: 20, right: 30, left: 60, bottom: 20 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis type="number" domain={[0, 50]} tickFormatter={(value) => `${value}%`} />
+                  <YAxis 
+                    dataKey="duration" 
+                    type="category" 
+                    width={80}
+                  />
+                  <Tooltip formatter={(value) => [`${value}%`, 'Percentage']} />
+                  <Legend />
+                  <Bar 
+                    dataKey="percentage" 
+                    name="Percentage" 
+                    fill="#82ca9d" 
+                    barSize={30}
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </FullScreenChart>
         </div>
         
         {/* Weather Correlation */}
         <div className="card">
           <h3 className="card-title">Temperature vs Trip Volume</h3>
-          <div className="chart-container">
-            <ResponsiveContainer width="100%" height="100%">
-              <ScatterChart
-                margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
-              >
-                <CartesianGrid />
-                <XAxis 
-                  type="number" 
-                  dataKey="temp" 
-                  name="Temperature" 
-                  unit="°F" 
-                />
-                <YAxis 
-                  type="number" 
-                  dataKey="trips" 
-                  name="Trips" 
-                  tickFormatter={formatNumber}
-                />
-                <Tooltip 
-                  cursor={{ strokeDasharray: '3 3' }}
-                  formatter={(value, name) => {
-                    if (name === 'temp') {
-                      return [`${value}°F`, 'Temperature'];
-                    } else {
-                      return [formatNumber(value), 'Trips'];
-                    }
-                  }}
-                />
-                <Legend />
-                <Scatter 
-                  name="Trip Volume" 
-                  data={analyticsData.correlationData} 
-                  fill="#8884d8" 
-                />
-              </ScatterChart>
-            </ResponsiveContainer>
-          </div>
+          <FullScreenChart title="Temperature vs Trip Volume">
+            <div className="chart-container">
+              <ResponsiveContainer width="100%" height="100%">
+                <ScatterChart
+                  margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+                >
+                  <CartesianGrid />
+                  <XAxis 
+                    type="number" 
+                    dataKey="temp" 
+                    name="Temperature" 
+                    unit="°F" 
+                  />
+                  <YAxis 
+                    type="number" 
+                    dataKey="trips" 
+                    name="Trips" 
+                    tickFormatter={formatNumber}
+                  />
+                  <Tooltip 
+                    cursor={{ strokeDasharray: '3 3' }}
+                    formatter={(value, name) => {
+                      if (name === 'temp') {
+                        return [`${value}°F`, 'Temperature'];
+                      } else {
+                        return [formatNumber(value), 'Trips'];
+                      }
+                    }}
+                  />
+                  <Legend />
+                  <Scatter 
+                    name="Trip Volume" 
+                    data={analyticsData.correlationData} 
+                    fill="#8884d8" 
+                    activeDot={{ r: 8 }}
+                  />
+                </ScatterChart>
+              </ResponsiveContainer>
+            </div>
+          </FullScreenChart>
         </div>
       </div>
     </div>
