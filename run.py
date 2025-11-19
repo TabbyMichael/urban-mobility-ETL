@@ -7,7 +7,7 @@ import argparse
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from src.app import create_app
-from src.streaming.streaming import streamer
+from src.core.streaming.streaming import streamer
 
 def run_flask():
     """Run the Flask application"""

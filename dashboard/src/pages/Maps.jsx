@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup, Circle, Polyline } from 'react-
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import FullScreenChart from './FullScreenChart';
+import FullScreenChart from '../components/ui/FullScreenChart';
 
 // Fix for default marker icons in react-leaflet
 delete L.Icon.Default.prototype._getIconUrl;

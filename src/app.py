@@ -10,8 +10,8 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.api.routes import api_bp
 from src.config.settings import Config
 from src.config.logging import logger
-from src.auth.auth import auth_manager
-from src.streaming.streaming import streamer
+from src.core.auth.auth import auth_manager
+from src.core.streaming.streaming import streamer
 
 def create_app():
     app = Flask(__name__)

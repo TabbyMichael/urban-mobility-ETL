@@ -6,12 +6,12 @@ import sys
 # Add the src directory to the path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
-from src.data.taxi_data import TaxiDataExtractor
-from src.data.uber_data import UberDataExtractor
-from src.data.mta_data import MTAGTFSExtractor
-from src.data.etl_pipeline import ETLPipeline
-from src.auth.auth import auth_manager
-from src.monitoring.health import health_checker
+from src.core.data.taxi_data import TaxiDataExtractor
+from src.core.data.uber_data import UberDataExtractor
+from src.core.data.mta_data import MTAGTFSExtractor
+from src.core.data.etl_pipeline import ETLPipeline
+from src.core.auth.auth import auth_manager
+from src.core.monitoring.health import health_checker
 from src.utils.exception_handler import handle_exceptions, handle_validation_errors
 from src.utils.rate_limiter import rate_limit
 

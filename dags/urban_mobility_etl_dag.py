@@ -3,8 +3,7 @@ Airflow DAG for Urban Mobility ETL Pipeline
 """
 from datetime import datetime, timedelta
 from airflow import DAG
-from airflow.operators.python_operator import PythonOperator
-from airflow.operators.bash_operator import BashOperator
+from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 import sys
 import os
@@ -12,8 +11,8 @@ import os
 # Add the project directory to the path
 sys.path.append('/home/kzer00/Documents/Urban Mobility & Transportation Analytics ETL')
 
-from src.data.taxi_data import TaxiDataExtractor
-from src.data.etl_pipeline import ETLPipeline
+from src.core.data.taxi_data import TaxiDataExtractor
+from src.core.data.etl_pipeline import ETLPipeline
 import pandas as pd
 
 # Default arguments for the DAG

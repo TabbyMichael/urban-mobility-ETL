@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, AreaChart, Area, PieChart, Pie, Cell, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ScatterChart, Scatter } from 'recharts';
-import FullScreenChart from './FullScreenChart';
+import FullScreenChart from '../components/ui/FullScreenChart';
 
 const Predictive = ({ data }) => {
   // Function to format large numbers

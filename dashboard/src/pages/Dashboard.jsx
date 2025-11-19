@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, AreaChart, Area } from 'recharts';
-import FullScreenChart from './FullScreenChart';
+import FullScreenChart from '../components/ui/FullScreenChart';
 
 const Dashboard = ({ data }) => {
   // Function to format large numbers
