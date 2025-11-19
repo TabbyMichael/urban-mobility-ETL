@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
-import Dashboard from './components/Dashboard';
-import Analytics from './components/Analytics';
-import Maps from './components/Maps';
-import Predictive from './components/Predictive';
-import RealTime from './components/RealTime';
-import Header from './components/Header';
+import Sidebar from './components/layout/Sidebar';
+import Header from './components/layout/Header';
+import Dashboard from './pages/Dashboard';
+import Analytics from './pages/Analytics';
+import Maps from './pages/Maps';
+import Predictive from './pages/Predictive';
+import RealTime from './pages/RealTime';
 import './App.css';
 import './components/AppLayout.css';
 

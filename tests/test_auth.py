@@ -8,7 +8,7 @@ import os
 # Add the project directory to the path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from src.auth.auth import auth_manager
+from src.core.auth.auth import auth_manager
 
 def test_auth_system():
     """Test the authentication system"""

@@ -11,14 +11,14 @@ import pandas as pd
 import time
 from unittest.mock import patch, MagicMock
 
-# Add the project directory to the path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/..')
+# Add the src directory to the path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from src.data.etl_pipeline import ETLPipeline
-from src.data.database import DatabaseManager
-from src.analytics.descriptive import DescriptiveAnalytics
-from src.ml.predictive import PredictiveModels
-from src.spatial.clustering import SpatialAnalytics
+from src.core.data.etl_pipeline import ETLPipeline
+from src.core.data.database import DatabaseManager
+from src.core.analytics.descriptive import DescriptiveAnalytics
+from src.core.ml.predictive import PredictiveModels
+from src.core.spatial.clustering import SpatialAnalytics
 from src.app import create_app
 
 class TestComprehensiveEndToEndPipeline(unittest.TestCase):

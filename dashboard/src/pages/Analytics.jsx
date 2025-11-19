@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ScatterChart, Scatter } from 'recharts';
-import FullScreenChart from './FullScreenChart';
+import FullScreenChart from '../components/ui/FullScreenChart';
 
 const Analytics = ({ data }) => {
   // Function to format large numbers

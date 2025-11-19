@@ -1,8 +1,8 @@
 import logging
 import time
 from datetime import datetime
-from src.data.database import DatabaseManager
-from src.auth.auth import auth_manager
+from src.core.data.database import DatabaseManager
+from src.core.auth.auth import auth_manager
 
 class HealthChecker:
     """Health check and monitoring for the Urban Mobility application"""
